@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load staticfiles %}
+{% block titulo %}Alta de datos{% endblock %}
+
+{% block botones %}
+    <form method="post" action="/agenda/save_agenda/">{% csrf_token %}
+    <button type="button" onclick="javascript:window.location =('/agenda/')">
+        <img src="{% static "back.png" %}" 
+            width="30px" border=0 title="Pantalla anterior">
+    </button>
+    </form>
+{% endblock %}
+
+{% block datos %}
+    <div class='mensajes' align="center">
+        <div class="divError">
+            El registro no se pudo grabar.
+        </div>
+    </div>
+{% endblock %}

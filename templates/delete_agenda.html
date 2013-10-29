@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load staticfiles %}
+{% block titulo %}Agenda - Resultado{% endblock %}
+
+{% block botones %}
+            <form method="post" action="/agenda/search_agenda/"
+                style="float:left; width: 80%; margin:10px;">{% csrf_token %}
+                <input type=search results=5 name=s 
+                    style='height: 30px; width:200px;'>
+            </form>
+            <form method="post" action="/agenda/append_agenda/" margin=0>{% csrf_token %}
+                <button type="button" onclick="javascript:window.location =('/agenda/')">
+                   <img src="{% static "back.png" %}" 
+                        width="30px" border=0
+                        title="Pantalla anterior">
+               </button>
+                <button type="submit">
+                    <img src="{% static "add_list.png" %}" 
+                        width="30px" border=0
+                        title="Alta de datos">
+                </button>
+            </form>
+{% endblock %}
+
+{% block datos %}
+        <div class='mensajes' align="center">
+            {% if error_message %}
+                <div class="divError">
+                    {{ error_message }}
+                </div>
+            {% else %}
+                <div class="divOk">
+                    {{ message }}
+                </div>
+            {% endif %}
+        </div>
+{% endblock %}

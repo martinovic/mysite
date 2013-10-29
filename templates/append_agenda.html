@@ -1,0 +1,430 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load staticfiles %}
+{% block titulo %}Alta de datos{% endblock %}
+
+{% block botones %}
+        <form method="post" action="/agenda/save_agenda/">{% csrf_token %}
+            <input type="hidden" name="id" value="{{ posts.id }}">
+           <button type="button" onclick="javascript:window.location =('/agenda/')">
+               <img src="{% static "back.png" %}" 
+                width="30px" border=0
+                title="Pantalla anterior">
+           </button>
+           <button type="reset">
+               <img src="{% static "cancel1.png" %}" 
+                width="30px" border=0
+                title="Cancelar alta de datos">
+           </button>
+           &nbsp;&nbsp;&nbsp;
+           <button type="submit">
+               <img src="{% static "backup.png" %}" 
+                width="30px" border=0
+                title="Guardar los datos">
+           </button>
+{% endblock %}
+
+{% block datos %}
+        <table border=0>
+            <tr>
+                <td align="right">Razon o Nombre y Apellido</td>
+                <td><input type="text" name="razonNombreApellido"
+                    value="{{ posts.razonNombreApellido }}"
+                    size=100 required></td>
+            </tr>
+            <tr>
+                <td align="right">Calle:</td>
+                <td>
+                    <input type="text" name="calle" 
+                        value="{{ posts.calle }}" required> 
+                    Numero:<input type="number" name="numero" 
+                        value="{{ posts.numero }}"
+                        maxlength="10" size="5" required> 
+                    Piso:<input type="text" name="piso" value="{{ posts.piso }}"> 
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Ciudad</td>
+                <td>
+                    <input type="text" name="ciudad" value="{{ posts.ciudad }}">
+                
+                    Provincia / Estado
+                    <select name=provincia>
+                        <option {% ifequal posts.provincia  "Buenos Aires" %}selected{% endifequal %} value="Buenos Aires">Buenos Aires</option>
+                        <option {% ifequal posts.provincia  "CABA" %}selected{% endifequal %} value="CABA">CABA</option>
+                        <option {% ifequal posts.provincia  "Buenos Aires" %}selected{% endifequal %} value="Catamarca">Catamarca</option>
+                        <option {% ifequal posts.provincia  "Catamarca" %}selected{% endifequal %} value="Chaco">Chaco</option>
+                        <option {% ifequal posts.provincia  "Chubut" %}selected{% endifequal %} value="Chubut">Chubut</option>
+                        <option {% ifequal posts.provincia  "Cordoba" %}selected{% endifequal %} value="Cordoba">Cordoba</option>
+                        <option {% ifequal posts.provincia  "Corrientes" %}selected{% endifequal %} value="Corrientes">Corrientes</option>
+                        <option {% ifequal posts.provincia  "Entre Rios" %}selected{% endifequal %} value="Entre Rios">Entre Rios</option>
+                        <option {% ifequal posts.provincia  "Formosa" %}selected{% endifequal %} value="Formosa">Formosa</option>
+                        <option {% ifequal posts.provincia  "Jujuy" %}selected{% endifequal %} value="Jujuy">Jujuy</option>
+                        <option {% ifequal posts.provincia  "La Pampa" %}selected{% endifequal %} value="La Pampa">La Pampa</option>
+                        <option {% ifequal posts.provincia  "La Rioja" %}selected{% endifequal %} value="La Rioja">La Rioja</option>
+                        <option {% ifequal posts.provincia  "Mendoza" %}selected{% endifequal %} value="Mendoza">Mendoza</option>
+                        <option {% ifequal posts.provincia  "Misiones" %}selected{% endifequal %} value="Misiones">Misiones</option>
+                        <option {% ifequal posts.provincia  "Neuquen" %}selected{% endifequal %} value="Neuquen">Neuquen</option>
+                        <option {% ifequal posts.provincia  "Rio Negro" %}selected{% endifequal %} value="Rio Negro">Rio Negro</option>
+                        <option {% ifequal posts.provincia  "Salta" %}selected{% endifequal %} value="Salta">Salta</option>
+                        <option {% ifequal posts.provincia  "San Juan" %}selected{% endifequal %} value="San Juan">San Juan</option>
+                        <option {% ifequal posts.provincia  "San Luis" %}selected{% endifequal %} value="San Luis">San Luis</option>
+                        <option {% ifequal posts.provincia  "Santa Cruz" %}selected{% endifequal %} value="Santa Cruz">Santa Cruz</option>
+                        <option {% ifequal posts.provincia  "Santa Fe" %}selected{% endifequal %} value="Santa Fe">Santa Fe</option>
+                        <option {% ifequal posts.provincia  "Santiago del Estero" %}selected{% endifequal %} value="Santiago del Estero">Santiago del Estero</option>
+                        <option {% ifequal posts.provincia  "Tierra del Fuego" %}selected{% endifequal %} value="Tierra del Fuego">Tierra del Fuego</option>
+                        <option {% ifequal posts.provincia  "Tucuman" %}selected{% endifequal %} value="Tucuman">Tucuman</option>
+                        <option {% ifequal posts.provincia  "Exterior" %}selected{% endifequal %} value="Exterior">Exterior</option>
+                    </select>
+                    Pais:
+                    <select name="pais">
+                          <option {% ifequal posts.pais  "AF" %}selected{% endifequal %} value="AF">Afganistán</option> 
+                          <option {% ifequal posts.pais  "AL" %}selected{% endifequal %} value="AL">Albania</option> 
+                          <option {% ifequal posts.pais  "DE" %}selected{% endifequal %} value="DE">Alemania</option> 
+                          <option {% ifequal posts.pais  "AD" %}selected{% endifequal %} value="AD">Andorra</option> 
+                          <option {% ifequal posts.pais  "AO" %}selected{% endifequal %} value="AO">Angola</option> 
+                          <option {% ifequal posts.pais  "AI" %}selected{% endifequal %} value="AI">Anguilla</option> 
+                          <option {% ifequal posts.pais  "AQ" %}selected{% endifequal %} value="AQ">Antártida</option> 
+                          <option {% ifequal posts.pais  "AG" %}selected{% endifequal %} value="AG">Antigua y Barbuda</option> 
+                          <option {% ifequal posts.pais  "AN" %}selected{% endifequal %} value="AN">Antillas Holandesas</option> 
+                          <option {% ifequal posts.pais  "SA" %}selected{% endifequal %} value="SA">Arabia Saudí</option> 
+                          <option {% ifequal posts.pais  "DZ" %}selected{% endifequal %} value="DZ">Argelia</option> 
+                          <option {% ifequal posts.pais  "AR" %}selected{% endifequal %} value="AR">Argentina</option> 
+                          <option {% ifequal posts.pais  "AM" %}selected{% endifequal %} value="AM">Armenia</option> 
+                          <option {% ifequal posts.pais  "AW" %}selected{% endifequal %} value="AW">Aruba</option> 
+                          <option {% ifequal posts.pais  "AU" %}selected{% endifequal %} value="AU">Australia</option> 
+                          <option {% ifequal posts.pais  "AT" %}selected{% endifequal %} value="AT">Austria</option>  
+                          <option {% ifequal posts.pais  "AZ" %}selected{% endifequal %} value="AZ">Azerbaiyán</option>  
+                          <option {% ifequal posts.pais  "BS" %}selected{% endifequal %} value="BS">Bahamas</option>  
+                          <option {% ifequal posts.pais  "BH" %}selected{% endifequal %} value="BH">Bahrein</option>  
+                          <option {% ifequal posts.pais  "BD" %}selected{% endifequal %} value="BD">Bangladesh</option>  
+                          <option {% ifequal posts.pais  "BB" %}selected{% endifequal %} value="BB">Barbados</option>  
+                          <option {% ifequal posts.pais  "BE" %}selected{% endifequal %} value="BE">Bélgica</option>  
+                          <option {% ifequal posts.pais  "BZ" %}selected{% endifequal %} value="BZ">Belice</option>  
+                          <option {% ifequal posts.pais  "BJ" %}selected{% endifequal %} value="BJ">Benin</option>  
+                          <option {% ifequal posts.pais  "BM" %}selected{% endifequal %} value="BM">Bermudas</option>  
+                          <option {% ifequal posts.pais  "BY" %}selected{% endifequal %} value="BY">Bielorrusia</option>  
+                          <option {% ifequal posts.pais  "MM" %}selected{% endifequal %} value="MM">Birmania</option>  
+                          <option {% ifequal posts.pais  "BO" %}selected{% endifequal %} value="BO">Bolivia</option>  
+                          <option {% ifequal posts.pais  "BA" %}selected{% endifequal %} value="BA">Bosnia y Herzegovina</option>  
+                          <option {% ifequal posts.pais  "BW" %}selected{% endifequal %} value="BW">Botswana</option>  
+                          <option {% ifequal posts.pais  "BR" %}selected{% endifequal %} value="BR">Brasil</option>  
+                          <option {% ifequal posts.pais  "BN" %}selected{% endifequal %} value="BN">Brunei</option>  
+                          <option {% ifequal posts.pais  "BG" %}selected{% endifequal %} value="BG">Bulgaria</option>  
+                          <option {% ifequal posts.pais  "BF" %}selected{% endifequal %} value="BF">Burkina Faso</option>  
+                          <option {% ifequal posts.pais  "BI" %}selected{% endifequal %} value="BI">Burundi</option>  
+                          <option {% ifequal posts.pais  "BT" %}selected{% endifequal %} value="BT">Bután</option>  
+                          <option {% ifequal posts.pais  "CV" %}selected{% endifequal %} value="CV">Cabo Verde</option>  
+                          <option {% ifequal posts.pais  "KH" %}selected{% endifequal %} value="KH">Camboya</option>  
+                          <option {% ifequal posts.pais  "CM" %}selected{% endifequal %} value="CM">Camerún</option>  
+                          <option {% ifequal posts.pais  "CA" %}selected{% endifequal %} value="CA">Canadá</option>  
+                          <option {% ifequal posts.pais  "TD" %}selected{% endifequal %} value="TD">Chad</option>  
+                          <option {% ifequal posts.pais  "CL" %}selected{% endifequal %} value="CL">Chile</option>  
+                          <option {% ifequal posts.pais  "CN" %}selected{% endifequal %} value="CN">China</option>  
+                          <option {% ifequal posts.pais  "CY" %}selected{% endifequal %} value="CY">Chipre</option>  
+                          <option {% ifequal posts.pais  "VA" %}selected{% endifequal %} value="VA">Ciudad del Vaticano (Santa Sede)</option>  
+                          <option {% ifequal posts.pais  "CO" %}selected{% endifequal %} value="CO">Colombia</option>  
+                          <option {% ifequal posts.pais  "KM" %}selected{% endifequal %} value="KM">Comores</option>  
+                          <option {% ifequal posts.pais  "CG" %}selected{% endifequal %} value="CG">Congo</option>  
+                          <option {% ifequal posts.pais  "CD" %}selected{% endifequal %} value="CD">Congo, República Democrática del</option>  
+                          <option {% ifequal posts.pais  "KR" %}selected{% endifequal %} value="KR">Corea</option>  
+                          <option {% ifequal posts.pais  "KP" %}selected{% endifequal %} value="KP">Corea del Norte</option>  
+                          <option {% ifequal posts.pais  "CI" %}selected{% endifequal %} value="CI">Costa de Marfíl</option>  
+                          <option {% ifequal posts.pais  "CR" %}selected{% endifequal %} value="CR">Costa Rica</option>  
+                          <option {% ifequal posts.pais  "HR" %}selected{% endifequal %} value="HR">Croacia (Hrvatska)</option>  
+                          <option {% ifequal posts.pais  "CU" %}selected{% endifequal %} value="CU">Cuba</option>  
+                          <option {% ifequal posts.pais  "DK" %}selected{% endifequal %} value="DK">Dinamarca</option>  
+                          <option {% ifequal posts.pais  "DJ" %}selected{% endifequal %} value="DJ">Djibouti</option>  
+                          <option {% ifequal posts.pais  "DM" %}selected{% endifequal %} value="DM">Dominica</option>  
+                          <option {% ifequal posts.pais  "EC" %}selected{% endifequal %} value="EC">Ecuador</option>  
+                          <option {% ifequal posts.pais  "EG" %}selected{% endifequal %} value="EG">Egipto</option>  
+                          <option {% ifequal posts.pais  "SV" %}selected{% endifequal %} value="SV">El Salvador</option>  
+                          <option {% ifequal posts.pais  "AE" %}selected{% endifequal %} value="AE">Emiratos Árabes Unidos</option>  
+                          <option {% ifequal posts.pais  "ER" %}selected{% endifequal %} value="ER">Eritrea</option>  
+                          <option {% ifequal posts.pais  "SI" %}selected{% endifequal %} value="SI">Eslovenia</option>  
+                          <option {% ifequal posts.pais  "ES" %}selected{% endifequal %} value="ES">España</option>  
+                          <option {% ifequal posts.pais  "US" %}selected{% endifequal %} value="US">Estados Unidos</option>  
+                          <option {% ifequal posts.pais  "EE" %}selected{% endifequal %} value="EE">Estonia</option>  
+                          <option {% ifequal posts.pais  "ET" %}selected{% endifequal %} value="ET">Etiopía</option>  
+                          <option {% ifequal posts.pais  "FJ" %}selected{% endifequal %} value="FJ">Fiji</option>  
+                          <option {% ifequal posts.pais  "PH" %}selected{% endifequal %} value="PH">Filipinas</option>  
+                          <option {% ifequal posts.pais  "FI" %}selected{% endifequal %} value="FI">Finlandia</option>  
+                          <option {% ifequal posts.pais  "FR" %}selected{% endifequal %} value="FR">Francia</option>  
+                          <option {% ifequal posts.pais  "GA" %}selected{% endifequal %} value="GA">Gabón</option>  
+                          <option {% ifequal posts.pais  "GM" %}selected{% endifequal %} value="GM">Gambia</option>  
+                          <option {% ifequal posts.pais  "GE" %}selected{% endifequal %} value="GE">Georgia</option>  
+                          <option {% ifequal posts.pais  "GH" %}selected{% endifequal %} value="GH">Ghana</option>  
+                          <option {% ifequal posts.pais  "GI" %}selected{% endifequal %} value="GI">Gibraltar</option>  
+                          <option {% ifequal posts.pais  "GD" %}selected{% endifequal %} value="GD">Granada</option>  
+                          <option {% ifequal posts.pais  "GR" %}selected{% endifequal %} value="GR">Grecia</option>  
+                          <option {% ifequal posts.pais  "GL" %}selected{% endifequal %} value="GL">Groenlandia</option>  
+                          <option {% ifequal posts.pais  "GP" %}selected{% endifequal %} value="GP">Guadalupe</option>  
+                          <option {% ifequal posts.pais  "GU" %}selected{% endifequal %} value="GU">Guam</option>  
+                          <option {% ifequal posts.pais  "GT" %}selected{% endifequal %} value="GT">Guatemala</option>  
+                          <option {% ifequal posts.pais  "GY" %}selected{% endifequal %} value="GY">Guayana</option>  
+                          <option {% ifequal posts.pais  "GF" %}selected{% endifequal %} value="GF">Guayana Francesa</option>  
+                          <option {% ifequal posts.pais  "GN" %}selected{% endifequal %} value="GN">Guinea</option>  
+                          <option {% ifequal posts.pais  "GQ" %}selected{% endifequal %} value="GQ">Guinea Ecuatorial</option>  
+                          <option {% ifequal posts.pais  "GW" %}selected{% endifequal %} value="GW">Guinea-Bissau</option>  
+                          <option {% ifequal posts.pais  "HT" %}selected{% endifequal %} value="HT">Haití</option>  
+                          <option {% ifequal posts.pais  "HN" %}selected{% endifequal %} value="HN">Honduras</option>  
+                          <option {% ifequal posts.pais  "HU" %}selected{% endifequal %} value="HU">Hungría</option>  
+                          <option {% ifequal posts.pais  "IN" %}selected{% endifequal %} value="IN">India</option>  
+                          <option {% ifequal posts.pais  "ID" %}selected{% endifequal %} value="ID">Indonesia</option>  
+                          <option {% ifequal posts.pais  "IQ" %}selected{% endifequal %} value="IQ">Irak</option>  
+                          <option {% ifequal posts.pais  "IR" %}selected{% endifequal %} value="IR">Irán</option>  
+                          <option {% ifequal posts.pais  "IE" %}selected{% endifequal %} value="IE">Irlanda</option>  
+                          <option {% ifequal posts.pais  "BV" %}selected{% endifequal %} value="BV">Isla Bouvet</option>  
+                          <option {% ifequal posts.pais  "CX" %}selected{% endifequal %} value="CX">Isla de Christmas</option>  
+                          <option {% ifequal posts.pais  "IS" %}selected{% endifequal %} value="IS">Islandia</option>  
+                          <option {% ifequal posts.pais  "KY" %}selected{% endifequal %} value="KY">Islas Caimán</option>  
+                          <option {% ifequal posts.pais  "CK" %}selected{% endifequal %} value="CK">Islas Cook</option>  
+                          <option {% ifequal posts.pais  "CC" %}selected{% endifequal %} value="CC">Islas de Cocos o Keeling</option>  
+                          <option {% ifequal posts.pais  "FO" %}selected{% endifequal %} value="FO">Islas Faroe</option>  
+                          <option {% ifequal posts.pais  "HM" %}selected{% endifequal %} value="HM">Islas Heard y McDonald</option>  
+                          <option {% ifequal posts.pais  "FK" %}selected{% endifequal %} value="FK">Islas Malvinas</option>  
+                          <option {% ifequal posts.pais  "MP" %}selected{% endifequal %} value="MP">Islas Marianas del Norte</option>  
+                          <option {% ifequal posts.pais  "MH" %}selected{% endifequal %} value="MH">Islas Marshall</option>  
+                          <option {% ifequal posts.pais  "UM" %}selected{% endifequal %} value="UM">Islas menores de Estados Unidos</option>  
+                          <option {% ifequal posts.pais  "PW" %}selected{% endifequal %} value="PW">Islas Palau</option>  
+                          <option {% ifequal posts.pais  "SB" %}selected{% endifequal %} value="SB">Islas Salomón</option>  
+                          <option {% ifequal posts.pais  "SJ" %}selected{% endifequal %} value="SJ">Islas Svalbard y Jan Mayen</option>  
+                          <option {% ifequal posts.pais  "TK" %}selected{% endifequal %} value="TK">Islas Tokelau</option>  
+                          <option {% ifequal posts.pais  "TC" %}selected{% endifequal %} value="TC">Islas Turks y Caicos</option>  
+                          <option {% ifequal posts.pais  "VI" %}selected{% endifequal %} value="VI">Islas Vírgenes (EE.UU.)</option>  
+                          <option {% ifequal posts.pais  "VG" %}selected{% endifequal %} value="VG">Islas Vírgenes (Reino Unido)</option>  
+                          <option {% ifequal posts.pais  "WF" %}selected{% endifequal %} value="WF">Islas Wallis y Futuna</option>  
+                          <option {% ifequal posts.pais  "IL" %}selected{% endifequal %} value="IL">Israel</option>  
+                          <option {% ifequal posts.pais  "IT" %}selected{% endifequal %} value="IT">Italia</option>  
+                          <option {% ifequal posts.pais  "JM" %}selected{% endifequal %} value="JM">Jamaica</option>  
+                          <option {% ifequal posts.pais  "JP" %}selected{% endifequal %} value="JP">Japón</option>  
+                          <option {% ifequal posts.pais  "JO" %}selected{% endifequal %} value="JO">Jordania</option>  
+                          <option {% ifequal posts.pais  "KZ" %}selected{% endifequal %} value="KZ">Kazajistán</option>  
+                          <option {% ifequal posts.pais  "KE" %}selected{% endifequal %} value="KE">Kenia</option>  
+                          <option {% ifequal posts.pais  "KG" %}selected{% endifequal %} value="KG">Kirguizistán</option>  
+                          <option {% ifequal posts.pais  "KI" %}selected{% endifequal %} value="KI">Kiribati</option>  
+                          <option {% ifequal posts.pais  "KW" %}selected{% endifequal %} value="KW">Kuwait</option>  
+                          <option {% ifequal posts.pais  "LA" %}selected{% endifequal %} value="LA">Laos</option>  
+                          <option {% ifequal posts.pais  "LS" %}selected{% endifequal %} value="LS">Lesotho</option>  
+                          <option {% ifequal posts.pais  "LV" %}selected{% endifequal %} value="LV">Letonia</option>  
+                          <option {% ifequal posts.pais  "LB" %}selected{% endifequal %} value="LB">Líbano</option>  
+                          <option {% ifequal posts.pais  "LR" %}selected{% endifequal %} value="LR">Liberia</option>  
+                          <option {% ifequal posts.pais  "LY" %}selected{% endifequal %} value="LY">Libia</option>  
+                          <option {% ifequal posts.pais  "LI" %}selected{% endifequal %} value="LI">Liechtenstein</option>  
+                          <option {% ifequal posts.pais  "LT" %}selected{% endifequal %} value="LT">Lituania</option>  
+                          <option {% ifequal posts.pais  "LU" %}selected{% endifequal %} value="LU">Luxemburgo</option>  
+                          <option {% ifequal posts.pais  "MK" %}selected{% endifequal %} value="MK">Macedonia, Ex-República Yugoslava de</option>  
+                          <option {% ifequal posts.pais  "MG" %}selected{% endifequal %} value="MG">Madagascar</option>  
+                          <option {% ifequal posts.pais  "MY" %}selected{% endifequal %} value="MY">Malasia</option>  
+                          <option {% ifequal posts.pais  "MW" %}selected{% endifequal %} value="MW">Malawi</option>  
+                          <option {% ifequal posts.pais  "MV" %}selected{% endifequal %} value="MV">Maldivas</option>  
+                          <option {% ifequal posts.pais  "ML" %}selected{% endifequal %} value="ML">Malí</option>  
+                          <option {% ifequal posts.pais  "MT" %}selected{% endifequal %} value="MT">Malta</option>  
+                          <option {% ifequal posts.pais  "MA" %}selected{% endifequal %} value="MA">Marruecos</option>  
+                          <option {% ifequal posts.pais  "MQ" %}selected{% endifequal %} value="MQ">Martinica</option>  
+                          <option {% ifequal posts.pais  "MU" %}selected{% endifequal %} value="MU">Mauricio</option>  
+                          <option {% ifequal posts.pais  "MR" %}selected{% endifequal %} value="MR">Mauritania</option>  
+                          <option {% ifequal posts.pais  "YT" %}selected{% endifequal %} value="YT">Mayotte</option>  
+                          <option {% ifequal posts.pais  "MX" %}selected{% endifequal %} value="MX">México</option>  
+                          <option {% ifequal posts.pais  "FM" %}selected{% endifequal %} value="FM">Micronesia</option>  
+                          <option {% ifequal posts.pais  "MD" %}selected{% endifequal %} value="MD">Moldavia</option>  
+                          <option {% ifequal posts.pais  "MC" %}selected{% endifequal %} value="MC">Mónaco</option>  
+                          <option {% ifequal posts.pais  "MN" %}selected{% endifequal %} value="MN">Mongolia</option>  
+                          <option {% ifequal posts.pais  "MS" %}selected{% endifequal %} value="MS">Montserrat</option>  
+                          <option {% ifequal posts.pais  "MZ" %}selected{% endifequal %} value="MZ">Mozambique</option>  
+                          <option {% ifequal posts.pais  "NA" %}selected{% endifequal %} value="NA">Namibia</option>  
+                          <option {% ifequal posts.pais  "NR" %}selected{% endifequal %} value="NR">Nauru</option>  
+                          <option {% ifequal posts.pais  "NP" %}selected{% endifequal %} value="NP">Nepal</option>  
+                          <option {% ifequal posts.pais  "NI" %}selected{% endifequal %} value="NI">Nicaragua</option>  
+                          <option {% ifequal posts.pais  "NE" %}selected{% endifequal %} value="NE">Níger</option>  
+                          <option {% ifequal posts.pais  "NG" %}selected{% endifequal %} value="NG">Nigeria</option>  
+                          <option {% ifequal posts.pais  "NU" %}selected{% endifequal %} value="NU">Niue</option>  
+                          <option {% ifequal posts.pais  "NF" %}selected{% endifequal %} value="NF">Norfolk</option>  
+                          <option {% ifequal posts.pais  "NO" %}selected{% endifequal %} value="NO">Noruega</option>  
+                          <option {% ifequal posts.pais  "NC" %}selected{% endifequal %} value="NC">Nueva Caledonia</option>  
+                          <option {% ifequal posts.pais  "NZ" %}selected{% endifequal %} value="NZ">Nueva Zelanda</option>  
+                          <option {% ifequal posts.pais  "OM" %}selected{% endifequal %} value="OM">Omán</option>  
+                          <option {% ifequal posts.pais  "NL" %}selected{% endifequal %} value="NL">Países Bajos</option>  
+                          <option {% ifequal posts.pais  "PA" %}selected{% endifequal %} value="PA">Panamá</option>  
+                          <option {% ifequal posts.pais  "PG" %}selected{% endifequal %} value="PG">Papúa Nueva Guinea</option>  
+                          <option {% ifequal posts.pais  "PK" %}selected{% endifequal %} value="PK">Paquistán</option>  
+                          <option {% ifequal posts.pais  "PY" %}selected{% endifequal %} value="PY">Paraguay</option>  
+                          <option {% ifequal posts.pais  "PE" %}selected{% endifequal %} value="PE">Perú</option>  
+                          <option {% ifequal posts.pais  "PN" %}selected{% endifequal %} value="PN">Pitcairn</option>  
+                          <option {% ifequal posts.pais  "PF" %}selected{% endifequal %} value="PF">Polinesia Francesa</option>  
+                          <option {% ifequal posts.pais  "PL" %}selected{% endifequal %} value="PL">Polonia</option>  
+                          <option {% ifequal posts.pais  "PT" %}selected{% endifequal %} value="PT">Portugal</option>  
+                          <option {% ifequal posts.pais  "PR" %}selected{% endifequal %} value="PR">Puerto Rico</option>  
+                          <option {% ifequal posts.pais  "QA" %}selected{% endifequal %} value="QA">Qatar</option>  
+                          <option {% ifequal posts.pais  "UK" %}selected{% endifequal %} value="UK">Reino Unido</option>  
+                          <option {% ifequal posts.pais  "CF" %}selected{% endifequal %} value="CF">República Centroafricana</option>  
+                          <option {% ifequal posts.pais  "CZ" %}selected{% endifequal %} value="CZ">República Checa</option>  
+                          <option {% ifequal posts.pais  "ZA" %}selected{% endifequal %} value="ZA">República de Sudáfrica</option>  
+                          <option {% ifequal posts.pais  "DO" %}selected{% endifequal %} value="DO">República Dominicana</option>  
+                          <option {% ifequal posts.pais  "SK" %}selected{% endifequal %} value="SK">República Eslovaca</option>  
+                          <option {% ifequal posts.pais  "RE" %}selected{% endifequal %} value="RE">Reunión</option>  
+                          <option {% ifequal posts.pais  "RW" %}selected{% endifequal %} value="RW">Ruanda</option>  
+                          <option {% ifequal posts.pais  "RO" %}selected{% endifequal %} value="RO">Rumania</option>  
+                          <option {% ifequal posts.pais  "RU" %}selected{% endifequal %} value="RU">Rusia</option>  
+                          <option {% ifequal posts.pais  "EH" %}selected{% endifequal %} value="EH">Sahara Occidental</option>  
+                          <option {% ifequal posts.pais  "KN" %}selected{% endifequal %} value="KN">Saint Kitts y Nevis</option>  
+                          <option {% ifequal posts.pais  "WS" %}selected{% endifequal %} value="WS">Samoa</option>  
+                          <option {% ifequal posts.pais  "AS" %}selected{% endifequal %} value="AS">Samoa Americana</option>  
+                          <option {% ifequal posts.pais  "SM" %}selected{% endifequal %} value="SM">San Marino</option>  
+                          <option {% ifequal posts.pais  "VC" %}selected{% endifequal %} value="VC">San Vicente y Granadinas</option>  
+                          <option {% ifequal posts.pais  "SH" %}selected{% endifequal %} value="SH">Santa Helena</option>  
+                          <option {% ifequal posts.pais  "LC" %}selected{% endifequal %} value="LC">Santa Lucía</option>  
+                          <option {% ifequal posts.pais  "ST" %}selected{% endifequal %} value="ST">Santo Tomé y Príncipe</option>  
+                          <option {% ifequal posts.pais  "SN" %}selected{% endifequal %} value="SN">Senegal</option>  
+                          <option {% ifequal posts.pais  "SC" %}selected{% endifequal %} value="SC">Seychelles</option>  
+                          <option {% ifequal posts.pais  "SL" %}selected{% endifequal %} value="SL">Sierra Leona</option>  
+                          <option {% ifequal posts.pais  "SG" %}selected{% endifequal %} value="SG">Singapur</option>  
+                          <option {% ifequal posts.pais  "SY" %}selected{% endifequal %} value="SY">Siria</option>  
+                          <option {% ifequal posts.pais  "SO" %}selected{% endifequal %} value="SO">Somalia</option>  
+                          <option {% ifequal posts.pais  "LK" %}selected{% endifequal %} value="LK">Sri Lanka</option>  
+                          <option {% ifequal posts.pais  "PM" %}selected{% endifequal %} value="PM">St. Pierre y Miquelon</option>  
+                          <option {% ifequal posts.pais  "SZ" %}selected{% endifequal %} value="SZ">Suazilandia</option>  
+                          <option {% ifequal posts.pais  "SD" %}selected{% endifequal %} value="SD">Sudán</option>  
+                          <option {% ifequal posts.pais  "SE" %}selected{% endifequal %} value="SE">Suecia</option>  
+                          <option {% ifequal posts.pais  "CH" %}selected{% endifequal %} value="CH">Suiza</option>  
+                          <option {% ifequal posts.pais  "SR" %}selected{% endifequal %} value="SR">Surinam</option>  
+                          <option {% ifequal posts.pais  "TH" %}selected{% endifequal %} value="TH">Tailandia</option>  
+                          <option {% ifequal posts.pais  "TW" %}selected{% endifequal %} value="TW">Taiwán</option>  
+                          <option {% ifequal posts.pais  "TZ" %}selected{% endifequal %} value="TZ">Tanzania</option>  
+                          <option {% ifequal posts.pais  "TJ" %}selected{% endifequal %} value="TJ">Tayikistán</option>  
+                          <option {% ifequal posts.pais  "TF" %}selected{% endifequal %} value="TF">Territorios franceses del Sur</option>  
+                          <option {% ifequal posts.pais  "TP" %}selected{% endifequal %} value="TP">Timor Oriental</option>  
+                          <option {% ifequal posts.pais  "TG" %}selected{% endifequal %} value="TG">Togo</option>  
+                          <option {% ifequal posts.pais  "TO" %}selected{% endifequal %} value="TO">Tonga</option>  
+                          <option {% ifequal posts.pais  "TT" %}selected{% endifequal %} value="TT">Trinidad y Tobago</option>  
+                          <option {% ifequal posts.pais  "TN" %}selected{% endifequal %} value="TN">Túnez</option>  
+                          <option {% ifequal posts.pais  "TM" %}selected{% endifequal %} value="TM">Turkmenistán</option>  
+                          <option {% ifequal posts.pais  "TR" %}selected{% endifequal %} value="TR">Turquía</option>  
+                          <option {% ifequal posts.pais  "TV" %}selected{% endifequal %} value="TV">Tuvalu</option>  
+                          <option {% ifequal posts.pais  "UA" %}selected{% endifequal %} value="UA">Ucrania</option>  
+                          <option {% ifequal posts.pais  "UG" %}selected{% endifequal %} value="UG">Uganda</option>  
+                          <option {% ifequal posts.pais  "UY" %}selected{% endifequal %} value="UY">Uruguay</option>  
+                          <option {% ifequal posts.pais  "UZ" %}selected{% endifequal %} value="UZ">Uzbekistán</option>  
+                          <option {% ifequal posts.pais  "VU" %}selected{% endifequal %} value="VU">Vanuatu</option>  
+                          <option {% ifequal posts.pais  "VE" %}selected{% endifequal %} value="VE">Venezuela</option>  
+                          <option {% ifequal posts.pais  "VN" %}selected{% endifequal %} value="VN">Vietnam</option>  
+                          <option {% ifequal posts.pais  "YE" %}selected{% endifequal %} value="YE">Yemen</option>  
+                          <option {% ifequal posts.pais  "YU" %}selected{% endifequal %} value="YU">Yugoslavia</option>  
+                          <option {% ifequal posts.pais  "ZM" %}selected{% endifequal %} value="ZM">Zambia</option>  
+                          <option {% ifequal posts.pais  "ZW" %}selected{% endifequal %} value="ZW">Zimbabue</option> 
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Telefono 1:
+                </td>
+                <td>
+                    <input type="tel" name="telefono1" value="{{ posts.telefono1 }}" required> 
+                    Telefono 2:<input type="tel" name="telefono2"  
+                    value="{{ posts.telefono2 }}"> 
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Telefono 3:
+                </td>
+                <td>
+                    <input type="tel" name="telefono3" 
+                        value="{{ posts.telefono3 }}">
+                    Telefono 4:<input type="tel" name="telefono4" 
+                        value="{{ posts.telefono4 }}"> 
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Email:</td>
+                <td>
+                    <input type="email" name="email1" 
+                    value="{{ posts.email1 }}" size='50'> 
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Email:</td>
+                <td>
+                    <input type="email" name="email2" 
+                    value="{{ posts.email2 }}" size='50'> 
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Email:</td>
+                <td>
+                    <input type="email" name="email3" 
+                    value="{{ posts.email3 }}" size='50'> 
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Tipo de entrada:</td>
+                <td>
+                    <select name="tipoEntrada">
+                        <option value="PR">Proveedor</option>
+                        <option value="CL">Cliente</option>
+                        <option value="PA">Particular</option>
+                    </select> 
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Productos:</td>
+                <td>
+                    <input type="text" name="productos" 
+                    value="{{ posts.productos }}" size='100'> 
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Entrega:</td>
+                <td>
+                    <select name="entrega">
+                        <option value="RE">Retira</option>
+                        <option value="DO">A domicilio</option>
+                    </select> 
+                    Horarios:<input type="text" name="horario" 
+                    value="{{ posts.horario }}" size='20'> 
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Transportes:</td>
+                <td>
+                    <input type="text" name="transportes" 
+                    value="{{ posts.transportes }}" size='100'> 
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Forma de pago:</td>
+                <td>
+                    <input type="text" name="pago" value="{{ posts.pago }}"> 
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Banco:</td>
+                <td>
+                    <input type="text" name="banco" 
+                    value="{{ posts.banco }}" size='100'> 
+                </td>
+            </tr>
+            <tr>
+                <td align="right">CUIT / CUIL:</td>
+                <td>
+                    <input type="text" name="cuit" 
+                    value="{{ posts.cuit }}" size='50'> 
+                    
+                </td>
+            </tr>
+            <tr>
+                <td align="right">CBU:</td>
+                <td>
+                    <input type="text" name="cbu" 
+                    value="{{ posts.cbu }}" size='50'> 
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Observaciones:</td>
+                <td>
+                    <input type="text" name="observaciones" 
+                    value="{{ posts.observaciones }}" size='50'> 
+                </td>
+            </tr>
+        </table>
+    </form>
+{% endblock %}

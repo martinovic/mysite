@@ -1,0 +1,19 @@
+- Registrar un cliente con toda su información personal y su posterior modificación. 
+- Generar lista de email para el envio en masa. 
+- Registrar la compra de productos. 
+- Generar listado de facturas pendientes de pago. 
+- Imprimir listado de compras realizadas. 
+- Modificar productos y su stock. 
+- Acceder a los productos de stock y mostrar detalladamente su información. 
+- Generar Listado de precios en archivos word. 
+- Realizar búsqueda rápida de un producto 
+- Registrar la venta de productos a un cliente 
+- Generar factura 
+- Generar listado de ventas impresas 
+- Imprimir informe de ventas impresas entre fechas. 
+- Generar listado de ventas no impresas. 
+- Generar facturas de ventas no impresas. 
+- Realizar la configuración del sistema 
+- Permitir acceso a al sistema de ventas solo a clientes autorizados 
+- Registrar usuarios y asignarles roles de acceso 
+- Administrar categorías de clientes y de productos 
