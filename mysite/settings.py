@@ -1,13 +1,19 @@
 # -*- coding: utf-8 -*-
 # Django settings for mysite project.
 
+
+# imports
+from os import path
+from getpass import getuser
+
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     # ('Marcelo Martinovic', 'marcelo.martinovic@gmail.com'),
+    (getuser(), getuser() + '@gmail.com'),
 )
-
 MANAGERS = ADMINS
 
 DATABASES = {
@@ -20,6 +26,10 @@ DATABASES = {
         'PORT': '',
     }
 }
+
+# get the project root dir
+PROJECT_ROOT = path.abspath(path.join(path.dirname(__file__), '..'))
+
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.4/ref/settings/#allowed-hosts
@@ -72,7 +82,8 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/home/marcelo/python/proyectos_Django/mysite/static/',  #FIXME
+    #'/home/marcelo/python/proyectos_Django/mysite/static/',
+    path.abspath(path.join(PROJECT_ROOT, 'static')),
 )
 
 # List of finder classes that know how to find static files in
@@ -109,11 +120,13 @@ ROOT_URLCONF = 'mysite.urls'
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Put strings here, like "/home/html/django_templates" .
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/home/marcelo/python/proyectos_Django/mysite/templates',  #FIXME
+    #'/home/marcelo/python/proyectos_Django/mysite/templates',
+    path.abspath(path.join(PROJECT_ROOT, 'templates')),
 )
+
 
 INSTALLED_APPS = (
     'django.contrib.auth',
