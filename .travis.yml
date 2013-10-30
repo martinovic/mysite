@@ -1,0 +1,12 @@
+# 2013-10-30T14:07:41 by juan .travis.yml Continuous Integration by Ninja-IDE
+language: python
+python:
+    - 2.7
+before_install: sudo apt-get update -qq ; sudo apt-get install -qq sloccount ; pip install pep8 pip-tools coviolations_app coverage --use-mirrors; npm install testem jslint
+install: pip install -r requirements.txt --use-mirrors
+before_script: rm --recursive --force --verbose *.pyc
+script: true    # nosetests --verbose --detailed-errors    # enable when we got Tests
+# after_script: coverage report    # enable when we got Tests
+after_success: covio
+# after_failure: covio  # runs when failed
+cache: apt
