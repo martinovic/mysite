@@ -28,11 +28,11 @@ class Stock(models.Model):
     rubro = models.ForeignKey(Rubros)
     destalle = models.CharField(max_length=50, blank=False)
     cantidad = models.IntegerField(default=0)
+    unidad = models.CharField(max_length=20, blank=True)
     precioCompra = models.FloatField(default=0)
     precioVenta = models.FloatField(default=0)
     ultimaFechaDeCompra = models.DateField(blank=False)
     ultimoProveedor = models.IntegerField(default=0, blank=False)
-
 
     def __unicode__(self):
         '''permite retornar el texto'''
@@ -45,7 +45,7 @@ class Historial(models.model):
     codigo = models.ForeignKey(Stock)
     cantidad = models.IntegerField(default=0)
     proveedor = models.ForeignKey(Agenda)
-    precio = models.FloatField(default=0)
+    precioCompra = models.FloatField(default=0)
     factura = models.CharField(max_length=50, blank=False)
 
     def __unicode__(self):
