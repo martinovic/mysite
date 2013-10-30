@@ -1,23 +1,26 @@
 {% load url from future %}
 {% load staticfiles %}
+
+
 {% spaceless %}
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="{% static "styles.css" %}">
-        <script src="{% static "html5aux.js" %}"></script>
+        <link rel=stylesheet href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
+        <link rel=stylesheet href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap-theme.min.css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
     </head>
 <body>
 <div class='botonera'>
-    <div style="float:left;"><h2 class='titulo'>{% block titulo %}{% endblock %}</h2></div>
+    <div style="float:left"><h2 class='titulo'>{% block titulo %}{% endblock %}</h2></div>
     <div align="right">
         {% block botones %}{% endblock %}
     </div>
 </div>
 
-<div class="pie" align='center' align=>
+<div class="pie" align='center'>
     <img src="{% static "apache-icon.png" %}" width="100px" align="absmiddle">
     <img src="{% static "djangologo.png" %}" width="100px" align="absmiddle">
-    <span style='margin:20px;'>by marcelo.martinovic@gmail.com</span>
+    <span style='margin:20px'>by marcelo.martinovic@gmail.com</span>
     <img src="{% static "Raspi_Colour_R.png" %}" height="50px" align="absmiddle">
     <img src="{% static "HTML5_Logo_256.png" %}" height="50px" align="absmiddle">
 </div>
