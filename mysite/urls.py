@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^login/', include('principal.urls', namespace="principal")),
     url(r'^agenda/', include('agenda.urls', namespace="agenda")),
     url(r'^polls/', include('polls.urls', namespace="polls")),
+    url(r'^developers/', include('developers.urls', namespace="developers")),
     url(r'^recover_password/', include('recover_password.urls', namespace="recover_password")),
     url(r'^admin/', include(admin.site.urls)),
 )
