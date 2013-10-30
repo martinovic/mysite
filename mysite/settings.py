@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Django settings for mysite project.
 
 DEBUG = True
@@ -12,7 +13,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/home/marcelo/python/proyectos_Django/mysite/database.db',
+        'NAME': 'database.db',
         'USER': '',
         'PASSWORD': '',
         'HOST': '',
@@ -38,7 +39,7 @@ SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
-USE_I18N = True
+USE_I18N = False
 
 # If you set this to False, Django will not format dates, numbers and
 # calendars according to the current locale.
@@ -71,7 +72,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/home/marcelo/python/proyectos_Django/mysite/static/',
+    '/home/marcelo/python/proyectos_Django/mysite/static/',  #FIXME
 )
 
 # List of finder classes that know how to find static files in
@@ -111,7 +112,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/home/marcelo/python/proyectos_Django/mysite/templates',
+    '/home/marcelo/python/proyectos_Django/mysite/templates',  #FIXME
 )
 
 INSTALLED_APPS = (
@@ -161,3 +162,23 @@ LOGGING = {
     }
 }
 
+
+# if DEBUG then django debug toolbar
+if DEBUG:
+    INTERNAL_IPS = ('127.0.0.1', '0.0.0.0', )  # add IP of your PC if fails
+    MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware', )
+    INSTALLED_APPS += ('debug_toolbar', )
+    DEBUG_TOOLBAR_PANELS = (
+        # 'debug_toolbar.panels.version.VersionDebugPanel',
+        'debug_toolbar.panels.timer.TimerDebugPanel',
+        'debug_toolbar.panels.settings_vars.SettingsVarsDebugPanel',
+        'debug_toolbar.panels.headers.HeaderDebugPanel',
+        #'debug_toolbar.panels.profiling.ProfilingDebugPanel',
+        'debug_toolbar.panels.request_vars.RequestVarsDebugPanel',
+        'debug_toolbar.panels.sql.SQLDebugPanel',
+        'debug_toolbar.panels.template.TemplateDebugPanel',
+        'debug_toolbar.panels.cache.CacheDebugPanel',
+        'debug_toolbar.panels.signals.SignalDebugPanel',
+        'debug_toolbar.panels.logger.LoggingPanel', )
+    DEBUG_TOOLBAR_CONFIG = {'SHOW_TOOLBAR_CALLBACK': lambda v: 1 == 1,
+                            'INTERCEPT_REDIRECTS': False, }
