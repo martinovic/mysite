@@ -5,6 +5,7 @@
 # imports
 from os import path
 from getpass import getuser
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 
 
 DEBUG = True
@@ -27,8 +28,13 @@ DATABASES = {
     }
 }
 
+
 # get the project root dir
 PROJECT_ROOT = path.abspath(path.join(path.dirname(__file__), '..'))
+
+
+# django suite
+TEMPLATE_CONTEXT_PROCESSORS = TCP + ('django.core.context_processors.request', )
 
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
@@ -135,6 +141,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'suit',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
