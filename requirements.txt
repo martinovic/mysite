@@ -1,7 +1,5 @@
 Django==1.5.5
-django-htmlmin==0.6.2
 django-suit==0.2.5
-fhurl==0.1.7
 smarturls==0.1.2
 # following are for DEV only
 django-debug-toolbar==0.9.4
