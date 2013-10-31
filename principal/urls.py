@@ -8,12 +8,16 @@ __url__ = ''
 __date__ = "2013-10-20"
 __updated__ = "2013-10-28"
 
-from django.conf.urls import patterns, url
+
+from django.conf.urls import patterns
 
 from principal import views
-from django.views.generic import DetailView, ListView
+
+# amitu.com/smarturls
+from smarturls import surl
+
 
 urlpatterns = patterns('',
-    url(r'^$', views.login, name='login'),
-    url(r'^validate/$', views.validate, name='validate'),
+    surl('^$', views.login, name='login'),
+    surl('/validate/$', views.validate, name='validate'),
 )

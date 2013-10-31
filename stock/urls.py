@@ -10,9 +10,7 @@ __updated__ = "2013-10-27"
 
 from django.conf.urls import patterns, url
 
-from polls import views
 from django.views.generic import DetailView, ListView
-from polls.models import Poll
 
 urlpatterns = patterns('',
     url(r'^$', views.index, name='index'),

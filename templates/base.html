@@ -10,25 +10,30 @@
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
     </head>
 <body>
+
+
+<h1 class="text-center">{% block titulo %}{% endblock %}</h1>
+
+
 <div class='botonera'>
-    <div style="float:left"><h2 class='titulo'>{% block titulo %}{% endblock %}</h2></div>
-    <div align="right">
-        {% block botones %}{% endblock %}
-    </div>
+    {% block botones %}{% endblock %}
 </div>
 
-<div class="pie" align='center'>
+<div class='datos'>
+    {% block datos %}{% endblock %}
+</div>
+
+
+<div class="footer panel-footer text-center">
     <img src="{% static "apache-icon.png" %}" width="100px" align="absmiddle">
     <img src="{% static "djangologo.png" %}" width="100px" align="absmiddle">
     <span style='margin:20px'>by marcelo.martinovic@gmail.com</span>
     <img src="{% static "Raspi_Colour_R.png" %}" height="50px" align="absmiddle">
     <img src="{% static "HTML5_Logo_256.png" %}" height="50px" align="absmiddle">
 </div>
-<br>
 
-<div class='datos'>
-{% block datos %}{% endblock %}
-</div>
+
 </body>
 </html>
+
 {% endspaceless %}

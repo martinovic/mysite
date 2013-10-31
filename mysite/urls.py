@@ -10,10 +10,8 @@ from smarturls import surl
 
 
 urlpatterns = patterns('',
-    surl('/', include('polls.urls', namespace="polls")),
-    surl('/login/', include('principal.urls', namespace="principal")),
+    surl('/', include('principal.urls', namespace="principal")),
     surl('/agenda/', include('agenda.urls', namespace="agenda")),
-    surl('/polls/', include('polls.urls', namespace="polls")),
     surl('/developers/', include('developers.urls', namespace="developers")),
     surl('/recover_password/', include('recover_password.urls', namespace="recover_password")),
     surl('/admin/', include(admin.site.urls)),
