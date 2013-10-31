@@ -72,7 +72,7 @@ nosetests.xml
 *.mo
 
 # Database Sqlite3
-*.db
+#*.db
 
 # Mr Developer
 .mr.developer.cfg
