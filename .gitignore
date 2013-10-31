@@ -79,3 +79,4 @@ nosetests.xml
 .project
 .pydevproject
 >>>>>>> cd9903d14a32c6f68f1de19998f83db58e8381c6
+/database.db
