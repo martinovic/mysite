@@ -204,5 +204,5 @@ if DEBUG:
                             'INTERCEPT_REDIRECTS': False, }
 
 
-# Django Suit configuration example
+# Django Suit config
 SUIT_CONFIG = {'ADMIN_NAME': 'Django'}
