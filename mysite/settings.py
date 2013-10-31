@@ -202,3 +202,7 @@ if DEBUG:
         'debug_toolbar.panels.logger.LoggingPanel', )
     DEBUG_TOOLBAR_CONFIG = {'SHOW_TOOLBAR_CALLBACK': lambda v: 1 == 1,
                             'INTERCEPT_REDIRECTS': False, }
+
+
+# Django Suit configuration example
+SUIT_CONFIG = {'ADMIN_NAME': 'Django'}
