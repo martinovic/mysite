@@ -29,3 +29,17 @@ Guia de Estilo de Codigo:
 - No codigo Python comentado, Borrar codigo muerto viejo.
 - UTF-8 Encoding Declaration en los .py        # -*- coding: utf-8 -*-
 - __ init __.py Vacios siempre que sea posible, previene import circular
+
+
+Debug:
+------
+
+Para hacer Debug se incluye wdb y se puede usar agregando temporalmente esta linea en el codigo
+
+```python
+import wdb; wdb.set_trace()
+```
+
+La ejecucion se cortara y se lanzara el Debugger con una Session Interactiva para investigar el error
+
+_(Si sabes usar otro debugger puedes usarlo, pero siempre borra el settrace() antes de subir el codigo)_
