@@ -6,7 +6,7 @@ __author__ = 'marcelo martinovic'
 __email__ = 'marcelo.martinovic@gmail.com'
 __url__ = ''
 __date__ = "2013-10-20"
-__updated__ = "2013-10-28"
+__updated__ = "2013-10-31"
 
 # Create your views here.
 
@@ -28,7 +28,7 @@ def validate(request):
     c.update(csrf(request))
     context = {}
 
-    username = request.POST["username"]
+    username = request.POST["user"]
     password = request.POST["password"]
     user = authenticate(username=username, password=password)
     if user is not None:
@@ -38,5 +38,5 @@ def validate(request):
     else:
         print('error')
         context = {'message':'Usuario no valido.'}
-        return HttpResponseRedirect('/login/', context)
+        return HttpResponseRedirect('/', context)
 

@@ -6,7 +6,7 @@ __author__ = 'marcelo martinovic'
 __email__ = 'marcelo.martinovic@gmail.com'
 __url__ = ''
 __date__ = "2013-10-20"
-__updated__ = "2013-10-28"
+__updated__ = "2013-10-31"
 
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse, HttpResponseRedirect

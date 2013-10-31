@@ -6,7 +6,7 @@ __author__ = 'marcelo martinovic'
 __email__ = 'marcelo.martinovic@gmail.com'
 __url__ = ''
 __date__ = "2013-10-20"
-__updated__ = "2013-10-28"
+__updated__ = "2013-10-31"
 
 
 from django.conf.urls import patterns
@@ -18,6 +18,6 @@ from smarturls import surl
 
 
 urlpatterns = patterns('',
-    surl('^$', views.login, name='login'),
-    surl('/validate/$', views.validate, name='validate'),
+    surl('^$', 'principal.views.login'),
+#     surl('/validate/$', 'principal.views.validate'),
 )
