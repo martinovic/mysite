@@ -19,7 +19,7 @@ def index_agenda(request):
     '''Index Page'''
 
     if 'valido' not in request.session:
-        return HttpResponseRedirect("/login/")
+        return HttpResponseRedirect("/")
 
     print("USUARIO:", request.session['valido'])
     datos = Agenda.objects.order_by('razonNombreApellido').all()

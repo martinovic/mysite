@@ -39,3 +39,8 @@ def validate(request):
         context = {'message': 'Usuario no valido.'}
         return HttpResponseRedirect('/', context)
 
+
+def logout(request):
+    '''Sale del sistema y cierra la session'''
+    del request.session['valido']
+    return HttpResponseRedirect('/')
