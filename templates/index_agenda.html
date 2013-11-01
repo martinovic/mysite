@@ -1,6 +1,21 @@
 {% extends "base.html" %}
 {% load url from future %}
 {% load staticfiles %}
+{% block menu %}
+<div class="navbar">
+    <div class="navbar-inner">
+        <a class="brand" href="#">Opciones</a>
+        <ul class="nav">
+            <li class="active"><a href="#">Principal</a></li>
+            <li><a href="#">Agenda</a></li>
+            <li><a href="#">Stock</a></li>
+        </ul>
+        <ul class="nav pull-right">
+            <li><a href="/logout/"><span class="glyphicon glyphicon-th"> Logout</span></a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
 {% block titulo %}Agenda{% endblock %}
 
 

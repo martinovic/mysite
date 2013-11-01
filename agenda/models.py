@@ -6,11 +6,12 @@ __author__ = 'marcelo martinovic'
 __email__ = 'marcelo.martinovic@gmail.com'
 __url__ = ''
 __date__ = "2013-10-20"
-__updated__ = "2013-10-25"
+__updated__ = "2013-11-01"
 
 from django.db import models
 
 # Create your models here.
+
 
 class Agenda(models.Model):
     '''clase modelo de la agenda'''

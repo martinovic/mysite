@@ -23,13 +23,16 @@
 {% block datos %}
     <div class="form-group text-center">
         <label for=razonNombreApellido>Razon o Nombre y Apellido</label>
-        <input type=text name=razonNombreApellido id=razonNombreApellido value="{{ posts.razonNombreApellido }}" size=100 required>
+        <input type=text name="razonNombreApellido"
+            id="razonNombreApellido" value="{{ posts.razonNombreApellido }}"
+                size=100 required>
     </div>
     <div class="form-group text-center">
         <label for=calle>Calle</label>
         <input type=text name=calle value="{{ posts.calle }}" required>
         <label for=numero>Numero</label>
-        <input type=number name=numero value="{{ posts.numero }}" maxlength=10 size=5 required>
+        <input type=number name=numero value="{{ posts.numero }}"
+            maxlength=10 size=5 required>
         <label for=piso>Piso</label>
         <input type=text name=piso value="{{ posts.piso }}">
     </div>
@@ -363,7 +366,8 @@
     </div>
     <div class="form-group text-center">
         <label for=observaciones>Observaciones</label>
-        <input type=text name=observaciones value="{{ posts.observaciones }}" size=50>
+        <input type=text name=observaciones value="{{ posts.observaciones }}"
+            size=50>
     </div>
     </form>
 {% endblock %}

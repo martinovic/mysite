@@ -11,7 +11,6 @@ __updated__ = "2013-10-31"
 
 from django.conf.urls import patterns
 
-from principal import views
 
 # amitu.com/smarturls
 from smarturls import surl
@@ -19,5 +18,4 @@ from smarturls import surl
 
 urlpatterns = patterns('',
     surl('^$', 'principal.views.login'),
-#     surl('/validate/$', 'principal.views.validate'),
 )

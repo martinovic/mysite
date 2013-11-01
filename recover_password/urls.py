@@ -11,7 +11,6 @@ __updated__ = "2013-10-28"
 from django.conf.urls import patterns, url
 
 from recover_password import views
-from django.views.generic import DetailView, ListView
 
 urlpatterns = patterns('',
     url(r'^$', views.recover_password, name='recover_password'),
