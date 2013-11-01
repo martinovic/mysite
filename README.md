@@ -43,3 +43,10 @@ import wdb; wdb.set_trace()
 La ejecucion se cortara y se lanzara el Debugger con una Session Interactiva para investigar el error
 
 _(Si sabes usar otro debugger puedes usarlo, pero siempre borra el settrace() antes de subir el codigo)_
+
+Ayuda:
+------
+
+- http://getbootstrap.com/css
+- http://getbootstrap.com/components
+- https://docs.djangoproject.com/en/1.5
