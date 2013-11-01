@@ -1,72 +1,58 @@
+{% extends "base.html" %}
 {% load url from future %}
 {% load staticfiles %}
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title>Developers</title>
-        <link rel="stylesheet" type="text/css" href="{% static "styles.css" %}">
-        <link rel="stylesheet" type="text/css" href="{% static "others.css" %}">
-        <script src="{% static "html5aux.js" %}"></script>
 
-    </head>
-    <body>
-        <div class="pie" align='center' align=>
-            <img src="{% static "apache-icon.png" %}" width="100px" align="absmiddle">
-            <img src="{% static "djangologo.png" %}" width="100px" align="absmiddle">
-            <span style='margin:20px;'>by marcelo.martinovic@gmail.com</span>
-            <img src="{% static "Raspi_Colour_R.png" %}" height="50px" align="absmiddle">
-            <img src="{% static "HTML5_Logo_256.png" %}" height="50px" align="absmiddle">
-        </div>
-        <div>
-        <table width='99%'>
-            <tr>
-            <td align="center">
-                <img src="{% static "developers/marcelo_python.png" %}" 
-                    height="100px"><br>Marcelo Martinovic<br>
-                    Python, Django, Raspberry Pi
-            </td>
-            <td align="center">
-                <img src="{% static "developers/no_image.png" %}" 
-                    height="100px"><br>Juan Carlos Paco<br>
-                    Python, Django
-            </td>
-            <td align="center">
-                <img src="{% static "developers/no_image.png" %}" 
-                    height="100px"><br>Pablo Petenello<br>--
-            </td>
-            <td align="center">
-                <img src="{% static "developers/no_image.png" %}" 
-                    height="100px"><br>Diego Requejo<br>--
-            </td>
-            <td align="center">
-                <img src="{% static "developers/no_image.png" %}" 
-                    height="100px"><br>Maria Gabriela P&eacute;rez<br>--
-            </td>
-            </tr>
-            <!-- linea 2 -->
-            <tr>
-            <td align="center">
-                <img src="{% static "developers/no_image.png" %}" 
-                    height="100px"><br>Will Santana<br>--
-            </td>
-            <td align="center">
-                <img src="{% static "developers/no_image.png" %}" 
-                    height="100px"><br>Jorge Eduardo Gomez<br>--
-            </td>
-            <td align="center">
-                <img src="{% static "developers/no_image.png" %}" 
-                    height="100px"><br>Gaston Robledo<br>--
-            </td align="center">
-            <td align="center">
-                <img src="{% static "developers/no_image.png" %}" 
-                    height="100px"><br>--<br>--
-            </td>
-            <td align="center">
-                <img src="{% static "developers/no_image.png" %}" 
-                    height="100px"><br>--<br>--
-            </td>
-            </tr>
-        </table>
-        </div>
-    </body>
-</html>
+{% block title %} Developers {% endblock %}
+
+
+{% block datos %}
+    <table width='99%'>
+        <tr>
+        <td align="center">
+            <img src="{% static "developers/marcelo_python.png" %}" height=100px>
+            <br>Marcelo Martinovic<br>
+            Python, Django, Raspberry Pi
+        </td>
+        <td align="center">
+            <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
+            <br>Juan Carlos Paco<br>
+            Python, Django
+        </td>
+        <td align="center">
+            <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
+            <br>Pablo Petenello<br>-
+        </td>
+        <td align="center">
+            <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
+            <br>Diego Requejo<br>-
+        </td>
+        <td align="center">
+           <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
+           <br>Maria Gabriela P&eacute;rez<br>-
+        </td>
+        </tr>
+        <!-- linea 2 -->
+        <tr>
+        <td align="center">
+            <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
+            <br>Will Santana<br>-
+        </td>
+        <td align="center">
+            <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
+            <br>Jorge Eduardo Gomez<br>-
+        </td>
+        <td align="center">
+            <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
+            <br>Gaston Robledo<br>-
+        </td align="center">
+        <td align="center">
+            <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
+            <br>-<br>-
+        </td>
+        <td align="center">
+            <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
+            <br>-<br>-
+        </td>
+        </tr>
+    </table>
+{% endblock %}
