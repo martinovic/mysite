@@ -10,10 +10,8 @@ __updated__ = "2013-10-31"
 
 # Create your views here.
 
-from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponse, HttpResponseRedirect
-from django.core.urlresolvers import reverse
-from django.template import loader, Context
+from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
 from django.contrib.auth import authenticate, login
 
@@ -21,6 +19,7 @@ from django.contrib.auth import authenticate, login
 def login(request):
     '''Prueba de index'''
     return render(request, 'login.html')
+
 
 def validate(request):
     '''valida el usuario'''
@@ -37,6 +36,6 @@ def validate(request):
         return HttpResponseRedirect("/agenda/")
     else:
         print('error')
-        context = {'message':'Usuario no valido.'}
+        context = {'message': 'Usuario no valido.'}
         return HttpResponseRedirect('/', context)
 

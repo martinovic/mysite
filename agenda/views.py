@@ -6,12 +6,10 @@ __author__ = 'marcelo martinovic'
 __email__ = 'marcelo.martinovic@gmail.com'
 __url__ = ''
 __date__ = "2013-10-20"
-__updated__ = "2013-10-31"
+__updated__ = "2013-11-01"
 
 from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponse, HttpResponseRedirect
-from django.core.urlresolvers import reverse
-from django.template import loader, Context
+from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
 
 from agenda.models import Agenda
@@ -28,6 +26,7 @@ def index_agenda(request):
     context = {'posts': datos}
     return render(request, 'index_agenda.html', context)
 
+
 def append_agenda(request):
     '''Append to agenda'''
     c = {}
@@ -38,6 +37,7 @@ def append_agenda(request):
             datos = Agenda.objects.get(pk=int(request.POST['id']))
             context = {'posts': datos}
     return render(request, 'append_agenda.html', context)
+
 
 def save_agenda(request):
     '''Graba los datos'''
@@ -109,18 +109,20 @@ def save_agenda(request):
         except:
             return render(request, 'failsave_agenda.html')
 
+
 def delete_agenda(request):
     '''Borrado de datos'''
     c = {}
     c.update(csrf(request))
     if request.method == 'POST':
         try:
-            instance = Agenda.objects.get(pk=request.POST['id']).delete()
-            context = {'message':'Se ha borrado el registro.'}
+            Agenda.objects.get(pk=request.POST['id']).delete()
+            context = {'message': 'Se ha borrado el registro.'}
             return render(request, 'delete_agenda.html', context)
         except:
-            context = {'error_message':'No se pudo borrar el archivo'}
-            return render(request, 'delete_agenda.html' , context)
+            context = {'error_message': 'No se pudo borrar el archivo'}
+            return render(request, 'delete_agenda.html', context)
+
 
 def search_agenda(request):
     '''Busqueda de datos'''
@@ -132,6 +134,6 @@ def search_agenda(request):
             razonNombreApellido__contains=request.POST["s"])
         context = {'posts': datos}
     except:
-        context = {'error_message':'Dato no encontrado'}
+        context = {'error_message': 'Dato no encontrado'}
 
     return render(request, 'search_agenda.html', context)

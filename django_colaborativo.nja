@@ -1,7 +1,32 @@
 {
+  "mainFile": "", 
+  "use-tabs": false, 
   "venv": "", 
-  "project-type": "Import from sources", 
+  "relatedProjects": [], 
   "name": "Django_Colaborativo", 
   "license": "GNU General Public License v3", 
+  "url": "", 
+  "pythonPath": "python", 
+  "preExecScript": "", 
+  "additional_builtins": [], 
+  "programParams": "", 
+  "indentation": 4, 
+  "PYTHONPATH": "", 
+  "supported-extensions": [
+    ".py", 
+    ".html", 
+    ".jpg", 
+    ".png", 
+    ".ui", 
+    ".css", 
+    ".json", 
+    ".js", 
+    ".ini", 
+    ".txt", 
+    ".wsgi", 
+    ".md"
+  ], 
+  "project-type": "Import from sources", 
+  "postExecScript": "", 
   "description": ""
 }
