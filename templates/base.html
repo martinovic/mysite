@@ -1,7 +1,5 @@
 {% load url from future %}
 {% load staticfiles %}
-
-
 {% spaceless %}
 <html>
     <head>
@@ -15,7 +13,9 @@
                 background-color:transparent;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;-ms-background-size:cover;background-size:cover
             }
         </style>
-        
+        <link rel="stylesheet" type="text/css" href="{% static "styles.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "others.css" %}">
+        <script src="{% static "html5aux.js" %}"></script>
     </head>
 <body>
 

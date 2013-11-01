@@ -43,4 +43,7 @@ import wdb; wdb.set_trace()
 La ejecucion se cortara y se lanzara el Debugger con una Session Interactiva para investigar el error
 
 _(Si sabes usar otro debugger puedes usarlo, pero siempre borra el settrace() antes de subir el codigo)_
+<<<<<<< HEAD
 
+=======
+>>>>>>> 496c5b7924f6c0d3f563f76a6a73fad08c9f352b
