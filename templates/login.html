@@ -3,39 +3,26 @@
 {% load staticfiles %}
 
 {% block datos %}
-        <div class="row-fluid">&nbsp;</div>
-        <div class="row-fluid">
-            <div class="span12">
+    <div class="panel panel-info pull-right">
+        <div class="panel-heading">Login</div>
 
-                <div class="span8 cuerpo">
-                  &nbsp;
+        <form class="form-vertical" role=form method=post action="/validate/" style="max-width:75%">
+            <fieldset class="text-center"><br>
+                <div class="input-group input-group-lg">
+                    <label>Usuario</label>
+                    <input type=text name=user placeholder=Nombre required class="form-control">
                 </div>
-
-                <div class="span3 hero-unit cuerpo">
-                  <form class="form-vertical" role="form" method="post"
-                            action="/validate/" style="max-width:75%">{% csrf_token %}
-                    <fieldset>
-                        <legend>Login</legend>
-                        <label>Usuario</label>
-                        <input type="text" value="" name="user"
-                            class="input-large"
-                            placeholder="Nombre">
-                        <label>Clave</label>
-                        <input type="password" value=""
-                            name="password"
-                            class="input-large"
-                            placeholder="Clave">
-                        <div class="text-center">
-                            <br><br>
-                            <button type="submit" class="btn btn-primary">Validar</button>
-                            &nbsp;
-                            <button type="reset" class="btn">Cancelar</button>
-                        </div>
-                    </fieldset>
-                  </form>
+                <div class="input-group input-group-lg">
+                    <label>Clave</label>
+                    <input type=password value name=password placeholder=Clave required class="form-control">
                 </div>
-            </div>
-        </div>
+                <div class="form-group form-group-lg"><br>
+                    <button type=submit class="btn btn-primary">Validar</button>
+                    &nbsp;
+                    <button type=reset class="btn btn-warning">Cancelar</button>
+                </div>
+            </fieldset>
+        </form>
 
     </div>
 {% endblock %}
