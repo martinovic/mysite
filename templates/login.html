@@ -1,60 +1,76 @@
-{% extends "base.html" %}
 {% load url from future %}
+<!DOCTYPE HTML>
 {% load staticfiles %}
-
-
-{% block titulo %} Login {% endblock %}
-
-
-{% block datos %}
-    <!--
+<html>
+    <head>
+        <title>Login</title>
+        <link rel=stylesheet href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
+        <link rel=stylesheet href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap-theme.min.css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+        <style>
+            @import url(https://fonts.googleapis.com/css?family="Ubuntu");*{font-family:"Ubuntu"}
+            body,.body{
+                background:url('http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/shattered.png') no-repeat center center fixed;
+                background-color:transparent;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;-ms-background-size:cover;background-size:cover
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="{% static "styles.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "others.css" %}">
+        <script src="{% static "html5aux.js" %}"></script>
+        
+    </head>
+    <body>
     <div>
+        <div class="pie" align='center' align=>
+            <img src="{% static "apache-icon.png" %}" width="100px" align="absmiddle">
+            <img src="{% static "djangologo.png" %}" width="100px" align="absmiddle">
+            <span style='margin:20px;'>by marcelo.martinovic@gmail.com</span>
+            <img src="{% static "Raspi_Colour_R.png" %}" height="50px" align="absmiddle">
+            <img src="{% static "HTML5_Logo_256.png" %}" height="50px" align="absmiddle">
+        </div>
         <div class="imagenDiv">
             <img src="{% static "pantalla_login.png" %}"
             width='550px' align="absmiddle">
         </div>
-        <div class="login" align="left">
-            <div style='margin: 10px;'>
-                <img src="{% static "login.png" %}" align="absmiddle">
-            </div>
-            <div> -->
-
-
-    <form class="form-horizontal" role="form" method="post" 
-        action="/validate/" style="max-width:75%">{% csrf_token %}
-        <div class="form-group">
-            <label for="user" class="col-sm-2 control-label">User</label>
-            <div class="col-sm-10">
-                <input type="input" class="form-control" 
-                    name="user" id="user" 
-                    placeholder="user" required>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="password" class="col-sm-2 control-label">Password</label>
-            <div class="col-sm-10">
-                <input type="password" class="form-control" 
-                    name="password" id="password" 
-                    placeholder="Password" required>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block">Ingresar</button>
-            </div>
-        </div>
-      <p class="text-center"><a href="/recover_password/">No puedo ingresar, recuperar clave.</a></p>
-    </form>
-
-
-
-
-<!--
-                <div align="left">
-                <p class="acceso">Usuario de testing.</p>
-                <p class="acceso">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; usuario: invitado<br>
-                <p class="acceso">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; clave: invitado</p>
+            <div class="login" align="left">
+                <div style='margin: 10px;'>
+                    <img src="{% static "login.png" %}" align="absmiddle">
                 </div>
+                <div>
+                    <form class="form-horizontal" role="form" method="post" 
+                        action="/validate/" style="max-width:75%">{% csrf_token %}
+                        <div class="form-group">
+                            <label for="user" class="col-sm-2 control-label">User</label>
+                            <div class="col-sm-10">
+                                <input type="input" class="form-control" 
+                                    name="user" id="user" 
+                                    placeholder="user" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-sm-2 control-label">Password</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" 
+                                    name="password" id="password" 
+                                    placeholder="Password" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block">Ingresar</button>
+                            </div>
+                        </div>
+                      <p class="text-center"><a href="/recover_password/">No puedo ingresar, recuperar clave.</a></p>
+                    </form>
+                    <!--
+                    <div align="left">
+                    <p class="acceso">Usuario de testing.</p>
+                    <p class="acceso">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; usuario: invitado<br>
+                    <p class="acceso">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; clave: invitado</p>
+                    </div>
+                    </div-->
+                </div> 
             </div>
-        </div> -->
-{% endblock %}
+        </div>
+    </body>
+</html>
