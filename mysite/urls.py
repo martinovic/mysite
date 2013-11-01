@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include  # , url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.views.generic import TemplateView
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -12,7 +13,8 @@ from smarturls import surl
 urlpatterns = patterns('',
     surl('/', include('principal.urls', namespace="principal")),
     surl('/agenda/', include('agenda.urls', namespace="agenda")),
-    surl('/developers/', include('developers.urls', namespace="developers")),
+    surl('/developers/', TemplateView.as_view(template_name='developers.html')),
+    surl('/ayuda/', TemplateView.as_view(template_name='ayuda.html')),
     surl('/recover_password/', include('recover_password.urls', namespace="recover_password")),
     surl('admin/', include(admin.site.urls)),
 
