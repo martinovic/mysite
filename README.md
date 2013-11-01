@@ -44,6 +44,8 @@ La ejecucion se cortara y se lanzara el Debugger con una Session Interactiva par
 
 _(Si sabes usar otro debugger puedes usarlo, pero siempre borra el settrace() antes de subir el codigo)_
 
+- Mas info: https://github.com/Kozea/wdb
+
 Ayuda:
 ------
 
