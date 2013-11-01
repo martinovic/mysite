@@ -1,5 +1,7 @@
 {% load url from future %}
 {% load staticfiles %}
+
+
 {% spaceless %}
 <html>
     <head>
@@ -13,9 +15,7 @@
                 background-color:transparent;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;-ms-background-size:cover;background-size:cover
             }
         </style>
-        <link rel="stylesheet" type="text/css" href="{% static "styles.css" %}">
-        <link rel="stylesheet" type="text/css" href="{% static "others.css" %}">
-        <script src="{% static "html5aux.js" %}"></script>
+
     </head>
 <body>
 
@@ -33,11 +33,11 @@
 
 
 <div class="footer panel-footer text-center">
-    <img src="{% static "apache-icon.png" %}" width="100px" align="absmiddle">
-    <img src="{% static "djangologo.png" %}" width="100px" align="absmiddle">
-    <span style='margin:20px'>by marcelo.martinovic@gmail.com</span>
-    <img src="{% static "Raspi_Colour_R.png" %}" height="50px" align="absmiddle">
-    <img src="{% static "HTML5_Logo_256.png" %}" height="50px" align="absmiddle">
+    <img src="{% static "apache-icon.png" %}" width=100px/>
+    <img src="{% static "djangologo.png" %}" width=100px/>
+    <span> by marcelo.martinovic@gmail.com </span>
+    <img src="{% static "Raspi_Colour_R.png" %}" height=50px/>
+    <img src="{% static "HTML5_Logo_256.png" %}" height=50px/>
 </div>
 
 
