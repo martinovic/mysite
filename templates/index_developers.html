@@ -2,57 +2,58 @@
 {% load url from future %}
 {% load staticfiles %}
 
+
 {% block title %} Developers {% endblock %}
 
 
 {% block datos %}
-    <table width='99%'>
+    <table width='99%' class="text-center">
         <tr>
-        <td align="center">
-            <img src="{% static "developers/marcelo_python.png" %}" height=100px>
-            <br>Marcelo Martinovic<br>
-            Python, Django, Raspberry Pi
-        </td>
-        <td align="center">
-            <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
-            <br>Juan Carlos Paco<br>
-            Python, Django
-        </td>
-        <td align="center">
-            <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
-            <br>Pablo Petenello<br>-
-        </td>
-        <td align="center">
-            <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
-            <br>Diego Requejo<br>-
-        </td>
-        <td align="center">
-           <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
-           <br>Maria Gabriela P&eacute;rez<br>-
-        </td>
+            <td>
+                <img src="{% static "developers/marcelo_python.png" %}" height=100px>
+                <br>Marcelo Martinovic<br>
+                Python, Django, Raspberry Pi
+            </td>
+            <td>
+                <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
+                <br>Juan Carlos Paco<br>
+                Python, Django
+            </td>
+            <td>
+                <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
+                <br>Pablo Petenello<br>-
+            </td>
+            <td>
+                <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
+                <br>Diego Requejo<br>-
+            </td>
+            <td>
+               <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
+               <br>Maria Gabriela P&eacute;rez<br>-
+            </td>
         </tr>
-        <!-- linea 2 -->
+        {# linea 2 #}
         <tr>
-        <td align="center">
-            <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
-            <br>Will Santana<br>-
-        </td>
-        <td align="center">
-            <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
-            <br>Jorge Eduardo Gomez<br>-
-        </td>
-        <td align="center">
-            <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
-            <br>Gaston Robledo<br>-
-        </td align="center">
-        <td align="center">
-            <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
-            <br>-<br>-
-        </td>
-        <td align="center">
-            <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
-            <br>-<br>-
-        </td>
+            <td>
+                <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
+                <br>Will Santana<br>-
+            </td>
+            <td>
+                <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
+                <br>Jorge Eduardo Gomez<br>-
+            </td>
+            <td>
+                <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
+                <br>Gaston Robledo<br>-
+            </td>
+            <td>
+                <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
+                <br>-<br>-
+            </td>
+            <td>
+                <span class="glyphicon glyphicon-user" style="font-size:100px"></span>
+                <br>-<br>-
+            </td>
         </tr>
     </table>
 {% endblock %}
