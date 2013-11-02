@@ -17,5 +17,5 @@ from smarturls import surl
 
 
 urlpatterns = patterns('',
-    surl('^$', 'principal.views.login'),
+    surl('^$', 'principal.views.loginShow'),
 )

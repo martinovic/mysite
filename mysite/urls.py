@@ -19,7 +19,7 @@ urlpatterns = patterns('',
     surl('admin/', include(admin.site.urls)),
 
     surl('/validate/', 'principal.views.validate'),
-    surl('/logout/', 'principal.views.logout'),
+    surl('/logout/', 'principal.views.logoutSystem'),
 
     surl('/agenda/append_agenda/', 'agenda.views.append_agenda'),
     surl('/agenda/save_agenda/', 'agenda.views.save_agenda'),

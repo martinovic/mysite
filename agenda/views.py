@@ -11,17 +11,15 @@ __updated__ = "2013-11-01"
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
-
+from django.contrib.auth.models import User
 from agenda.models import Agenda
 
 
 def index_agenda(request):
     '''Index Page'''
-
-    if 'valido' not in request.session:
+    if not request.user.is_authenticated():
         return HttpResponseRedirect("/")
 
-    print("USUARIO:", request.session['valido'])
     datos = Agenda.objects.order_by('razonNombreApellido').all()
     context = {'posts': datos}
     return render(request, 'index_agenda.html', context)

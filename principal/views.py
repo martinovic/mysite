@@ -13,10 +13,12 @@ __updated__ = "2013-10-31"
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate
+from django.contrib.auth import login
+from django.contrib.auth import logout
 
 
-def login(request):
+def loginShow(request):
     '''Prueba de index'''
     return render(request, 'login.html')
 
@@ -31,16 +33,14 @@ def validate(request):
     password = request.POST["password"]
     user = authenticate(username=username, password=password)
     if user is not None:
-        print('success')
-        request.session['valido'] = username
+        login(request, user)
         return HttpResponseRedirect("/agenda/")
     else:
-        print('error')
         context = {'message': 'Usuario no valido.'}
         return HttpResponseRedirect('/', context)
 
 
-def logout(request):
+def logoutSystem(request):
     '''Sale del sistema y cierra la session'''
-    del request.session['valido']
+    logout(request)
     return HttpResponseRedirect('/')
