@@ -1,22 +1,22 @@
 {% load url from future %}
 {% load staticfiles %}
-
-
 {% spaceless %}
+
+
 <html>
     <head>
+        <meta charset="utf-8"/><title>.</title>
         <link rel=stylesheet href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
         <link rel=stylesheet href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap-theme.min.css">
-        <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet" media="screen">
-
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+        <!-- <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet" media="screen"> -->
         <style>
-            @import url(https://fonts.googleapis.com/css?family="Ubuntu");*{font-family:"Ubuntu"}
+            @import url(//fonts.googleapis.com/css?family="Ubuntu");*{font-family:"Ubuntu"}
             body,.body{
-                background:url('http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/shattered.png') no-repeat center center fixed;
-                background-color:transparent;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;-ms-background-size:cover;background-size:cover
+                background:url(//subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/shattered.png) no-repeat center center fixed;
+                background-color:transparent;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover
             }
         </style>
+<<<<<<< HEAD
 
         <style>
         body { font-size: 16px; }
@@ -34,44 +34,72 @@
 
         </style>
 
+=======
+>>>>>>> b57e67d8cafbd0a0032afbc722472cd904664278
     </head>
-    <body>
-        {% block menu%}{% endblock %}
-
-        <h1 class="text-center">{% block titulo %}{% endblock %}</h1>
+    <body><div class=wrap id=wrap>
 
 
-        <div class='botonera'>
-            {% block botones %}{% endblock %}
+      {# Fixed navbar  #}
+      <div class="navbar-sm navbar-inverse navbar-fixed-top" role=navigation>
+        <div class=container>
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/"><b>Django</b></a>
+          </div>
+            <ul class="nav navbar-nav">
+                <li class=active><a href="#">Principal</a>
+                <li><a href="/agenda">Agenda</a>
+                <li><a href="#">blah</a>
+                <li><a href="#">blah</a>
+                <li><a href="#">blah</a>
+            </ul>
+            <form class="navbar-form navbar-left" role=search>
+                <div class="form-group input-group-sm">
+                    <input type=search class="form-control" placeholder=Buscar>
+                </div>
+                <button type=submit class="btn btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/logout/"><button class="btn btn-sm btn-warning">Salir <span class="glyphicon glyphicon-log-out"></span></button></a>
+            </ul>
+          </div>
         </div>
-
-        <div class='datos'>
-            {% block datos %}{% endblock %}
-        </div>
+    </div>
 
 
-        <div class="footer panel-footer text-center">
-            <div>
-                <div class="span3">
-                    <img src="{% static "apache-icon.png" %}" width=100px/>
-                </div>
-                <div class="span3">
-                    <img src="{% static "djangologo.png" %}" width=100px/>
-                </div>
-                <div class="span3">
-                    <a href='/developers/'><em>Desarrolladores participantes</em></a>
-                </div>
-                <div class="span3">
-                    <img src="{% static "Raspi_Colour_R.png" %}" width=50px/>
-                </div>
-                <div class="span3">
-                    <img src="{% static "HTML5_Logo_256.png" %}" width=50px/>
-                </div>
+      {# page content #}
+      <div class=container style="padding-top:75px">
+          <div class=botonera>
+              {% block botones %}{% endblock %}
+          </div>
+          <div class=datos>
+              {% block datos %}{% endblock %}
+          </div>
+      </div>
+    </div>
+
+
+    {# footer #}
+    <footer class="footer panel-footer text-center" style="max-height:75px;position:absolute;bottom:0;width:100%">
+      <div class="container">
+          <div class=row>
+            <div class="col-md-2"><img src="{% static "apache-icon.png" %}" width=75px/>
+            </div>
+            <div class="col-md-2"><img src="{% static "djangologo.png" %}" width=75px/>
+            </div>
+            <div class="col-md-2"><a href='/developers' class=credit>Desarrolladores</a>
+            </div>
+            <div class="col-md-2"><img src="{% static "Raspi_Colour_R.png" %}" width=40px/>
+            </div>
+            <div class="col-md-2"><img src="{% static "HTML5_Logo_256.png" %}" width=50px/>
             </div>
         </div>
+      </div>
+    </footer>
 
 
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
     </body>
 </html>
-
 {% endspaceless %}
