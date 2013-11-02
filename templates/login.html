@@ -5,24 +5,24 @@
 {% block datos %}
     <div class="panel panel-info pull-right">
         <div class="panel-heading">Login</div>
-
-        <form class="form-vertical" role=form method=post action="/validate/" style="max-width:75%">
-            <fieldset class="text-center"><br>
-                <div class="input-group input-group-lg">
-                    <label>Usuario</label>
-                    <input type=text name=user placeholder=Nombre required class="form-control">
-                </div>
-                <div class="input-group input-group-lg">
-                    <label>Clave</label>
-                    <input type=password value name=password placeholder=Clave required class="form-control">
-                </div>
-                <div class="form-group form-group-lg"><br>
-                    <button type=submit class="btn btn-primary">Validar</button>
-                    &nbsp;
-                    <button type=reset class="btn btn-warning">Cancelar</button>
-                </div>
-            </fieldset>
-        </form>
-
+            <form class="form-vertical" role=form method=post
+                action="/validate/" style="max-width:75%; margin-left:20px;">
+                <fieldset class="text-center"><br>
+                    <div class="input-group input-group-lg">
+                        <label>Usuario</label>
+                        <input type="text" name="user" placeholder="Nombre" required
+                            class="form-control">
+                    </div>
+                    <div class="input-group input-group-lg">
+                        <label>Clave</label>
+                        <input type="password" value name="password" placeholder="Clave" required class="form-control">
+                    </div>
+                    <div class="form-group form-group-lg"><br>
+                        <button type=submit class="btn btn-primary">Validar</button>
+                        &nbsp;
+                        <button type=reset class="btn btn-warning">Cancelar</button>
+                    </div>
+                </fieldset>
+            </form>
     </div>
 {% endblock %}

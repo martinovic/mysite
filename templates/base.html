@@ -16,7 +16,6 @@
                 background-color:transparent;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover
             }
         </style>
-<<<<<<< HEAD
 
         <style>
         body { font-size: 16px; }
@@ -33,38 +32,9 @@
         }
 
         </style>
-
-=======
->>>>>>> b57e67d8cafbd0a0032afbc722472cd904664278
     </head>
-    <body><div class=wrap id=wrap>
-
-
-      {# Fixed navbar  #}
-      <div class="navbar-sm navbar-inverse navbar-fixed-top" role=navigation>
-        <div class=container>
-          <div class="navbar-header">
-            <a class="navbar-brand" href="/"><b>Django</b></a>
-          </div>
-            <ul class="nav navbar-nav">
-                <li class=active><a href="#">Principal</a>
-                <li><a href="/agenda">Agenda</a>
-                <li><a href="#">blah</a>
-                <li><a href="#">blah</a>
-                <li><a href="#">blah</a>
-            </ul>
-            <form class="navbar-form navbar-left" role=search>
-                <div class="form-group input-group-sm">
-                    <input type=search class="form-control" placeholder=Buscar>
-                </div>
-                <button type=submit class="btn btn-sm"><span class="glyphicon glyphicon-search"></span></button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="/logout/"><button class="btn btn-sm btn-warning">Salir <span class="glyphicon glyphicon-log-out"></span></button></a>
-            </ul>
-          </div>
-        </div>
-    </div>
+    <body>
+      {% block menu %}{% endblock %}
 
 
       {# page content #}
@@ -80,7 +50,8 @@
 
 
     {# footer #}
-    <footer class="footer panel-footer text-center" style="max-height:75px;position:absolute;bottom:0;width:100%">
+    <footer class="footer panel-footer text-center"
+        style="max-height:75px;position:absolute;bottom:0;width:100%">
       <div class="container">
           <div class=row>
             <div class="col-md-2"><img src="{% static "apache-icon.png" %}" width=75px/>
