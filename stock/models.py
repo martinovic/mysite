@@ -13,7 +13,7 @@ from django.db import models
 # Create your models here.
 
 
-class Rubros(model.Models):
+class Rubros(models.Model):
     '''Rubros'''
     rubro = models.CharField(max_lenght=150, blank=False, unique=True)
 
@@ -39,7 +39,7 @@ class Stock(models.Model):
         return self.codigo
 
 
-class Historial(models.model):
+class Historial(models.Model):
     '''Historial de compras'''
     fecha = models.DateField()
     codigo = models.ForeignKey(Stock)
