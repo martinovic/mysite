@@ -11,7 +11,6 @@ __updated__ = "2013-11-01"
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
-from django.contrib.auth.models import User
 from agenda.models import Agenda
 
 
