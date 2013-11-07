@@ -284,7 +284,7 @@ class Cliente(models.Model):
     apellido = models.CharField(max_length=100, blank=True)
     fechaNacimiento= models.DateField()
     pais = models.CharField(max_length=2, choices=PAISES, default='AR')
-    provincia = models.CharField(max_length=2, choices=PROVINCIAS, default='CABA')
+    provincia = models.CharField(max_length=40, choices=PROVINCIAS, default='CABA')
 
     def __unicode__(self):
         '''permite retornar el texto'''
