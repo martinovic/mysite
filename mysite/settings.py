@@ -149,6 +149,7 @@ INSTALLED_APPS = (
     'agenda',
     'principal',
     'recover_password',
+    'cliente',
 )
 
 # A sample logging configuration. The only tangible logging
