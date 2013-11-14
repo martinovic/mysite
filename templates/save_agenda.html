@@ -1,13 +1,16 @@
 {% extends "base.html" %}
 {% load url from future %}
 {% load staticfiles %}
+
+{% block menu %}{% include "menu.html" %}{% endblock %}
+
 {% block titulo %}Alta de datos - Resultado{% endblock %}
 
 {% block botones %}
     <form method="post" action="/agenda/save_agenda/">{% csrf_token %}
     <button type="button" onclick="javascript:window.location =('/agenda/')">
-        <img src="{% static "back.png" %}" 
-            width="30px" border=0 title="Pantalla anterior">
+        <span class="glyphicon-arrow-left"
+            title="Pantalla anterior" style="font-size:30px"></span>
     </button>
     </form>
 {% endblock %}
