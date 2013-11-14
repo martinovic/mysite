@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load staticfiles %}
+{% block menu %}
+    <div class="wrap" id=wrap>
+        <div class="navbar-sm navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"><b>Django</b></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Principal</a></li>
+                <li><a href="/agenda">Agenda</a></li>
+                <li class="dropdown">
+                    <a href"#" class="dropdown-toggle" data-toggle="dropdown">Productos<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Stock real</a></li>
+                        <li><a href="#">Categorias</a></li>
+                        <li><a href="#">Historico</a></li>
+                    </ul>
+                </li>
+                <li><a href="/agenda">Compras</a></li>
+                <li><a href="/agenda">Ventas</a></li>
+            </ul>
+            <form class="navbar-form navbar-left" role=search>
+                <div class="form-group input-group-sm">
+                    <input type=search class="form-control" placeholder=Buscar>
+                </div>
+                <button type=submit class="btn btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/logout/"><button class="btn btn-sm btn-warning">Salir <span class="glyphicon glyphicon-log-out"></span></button></a>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

@@ -1,4 +1,4 @@
-# -*- coding: utf-8 *-*
+# -*- coding: utf-8 -*-
 __prj__ = '1.0.0'
 __version__ = ''
 __license__ = 'GNU General Public License v3'
