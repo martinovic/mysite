@@ -1,0 +1,142 @@
+BODY{
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: rgb(102, 102, 102);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -1px;
+    margin-left:0px
+}
+
+IMG{
+    padding: 5px;
+}
+
+FORM{
+    margin: 0px;
+}
+
+INPUT{
+    border-radius: 3px;
+    -o-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border: 1px solid #B6ACAC;
+    box-sizing: border-box;
+}
+
+.botonera{
+    position: absolute;
+    top:10px;
+    background-color: #CECECE;
+    border: 1px solid #c6c6c6;
+    width: 90%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -o-border-right-radius: 10px;
+    -moz-border-right-radius: 10px;
+    -webkit-border-right-radius: 10px;
+}
+
+h2.titulo{
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: rgb(102, 102, 102);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    font-size: 36px;
+    line-height: 36px;
+    margin:3px;
+}
+
+.info{
+    position: relative;
+    border: 1px solid #c6c6c6;
+    border-radius: 10px;
+    -o-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin-left:10px;
+    z-index: 1;
+}
+
+.datos{
+    position: relative;
+    top:80px;
+    overflow-y: scroll;
+    height:400px;
+}
+
+.mensajes{
+    position: relative;
+    top:10px;
+}
+
+.inputData{
+    position: absolute;
+    top:80px;
+    overflow-y: scroll;
+    height:400px;
+}
+
+.more{
+    position: absolute;
+    top:0px;
+    width:100%;
+}
+
+.pie{
+    position: absolute;
+    bottom:2px;
+    width:100%;
+    color: #FFFFFF;
+    background-color: #103E2E;
+}
+
+.divOk{
+    position: relative;
+    top:150px;
+    background-color: #BBECBD;
+    border-radius: 10px;
+    -o-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    width: 400px;
+    height: 70px;
+    line-height: 70px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.divError{
+    position: relative;
+    top:150px;
+    background-color: #FF6B7C;
+    border-radius: 10px;
+    -o-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    width: 400px;
+    height: 70px;
+    line-height: 70px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.divMore{
+    postion: relative;
+    background-color: #487858;
+    border: 1px solid black;
+    border-radius: 10px;
+    -o-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    width: 300px;
+    display:none;
+    padding: 10px;
+    align: left;
+    left: 100px;
+}
+
+.footer{
+    position: absolute;
+    bottom: -150px;
+    }
