@@ -3,26 +3,30 @@
 {% load staticfiles %}
 
 {% block datos %}
-    <div class="panel panel-info pull-right">
+<div class="col-md-4">
+    <div class="panel panel-info">
         <div class="panel-heading">Login</div>
-            <form class="form-vertical" role=form method=post
-                action="/validate/" style="max-width:75%; margin-left:20px;">
-                <fieldset class="text-center"><br>
-                    <div class="input-group input-group-lg">
-                        <label>Usuario</label>
-                        <input type="text" name="user" placeholder="Nombre" required
-                            class="form-control">
+        <div class="panel-body">
+            <form class="form-vertical text-center" role=form method=post
+                action="/validate/" >
+                <fieldset>
+                    <div class="form-group">
+                        <label for="exampleInputUser">Usuario</label>
+                        <input type="text" class="form-control" id="exampleInputUser" name="user" placeholder="Nombre" required
+                            >
                     </div>
-                    <div class="input-group input-group-lg">
-                        <label>Clave</label>
-                        <input type="password" value name="password" placeholder="Clave" required class="form-control">
+                    <div class="form-group">    
+                        <label for="exampleInputClave">Clave</label>
+                        <input type="password" class="form-control" id="exampleInputClave" value name="password" placeholder="Clave" required >
                     </div>
-                    <div class="form-group form-group-lg"><br>
+                    <div class="form-group">
                         <button type=submit class="btn btn-primary">Validar</button>
                         &nbsp;
                         <button type=reset class="btn btn-warning">Cancelar</button>
                     </div>
                 </fieldset>
             </form>
+        </div>
     </div>
+</div>
 {% endblock %}

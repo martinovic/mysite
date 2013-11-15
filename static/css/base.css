@@ -1,0 +1,47 @@
+/* CSS  base.html */
+
+/* Código inicial en base.html */
+
+body { font-size: 16px; }
+        label { font-size: 18px; }
+        .input-large {
+            height: 44px !important;
+            font-size: 18px !important;
+        }
+
+        .footer{
+            position: absolute;
+            width: 100%;
+            bottom: 0px;
+        }
+
+/* Código inline encontrado en base.html */
+.djcontent{
+	padding-top:75px;
+}
+.datos{
+	
+}
+
+.form-vertical{
+
+	/* Old code comented */
+	/*max-width:75%;
+	margin-left:20px;
+	*/
+}
+
+footer{
+
+	/* Old code comented */
+	/*
+	max-height:75px;
+	position:absolute;
+	bottom:0;
+	width:100%;	
+	*/
+
+	height: auto;
+	padding: 20px;
+	background-color: #f5f5f5;
+}
