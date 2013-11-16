@@ -24,7 +24,8 @@
     ".ini", 
     ".txt", 
     ".wsgi", 
-    ".md"
+    ".md", 
+    ".*"
   ], 
   "project-type": "Import from sources", 
   "postExecScript": "", 
