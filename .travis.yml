@@ -1,12 +1,30 @@
 # 2013-10-30T14:07:41 by juan .travis.yml Continuous Integration by Ninja-IDE
 language: python
+
 python:
     - 2.7
-before_install: sudo apt-get update -qq ; sudo apt-get install -qq sloccount ; pip install pep8 pip-tools coviolations_app coverage --use-mirrors; npm install testem jslint
-install: pip install -r requirements.txt --use-mirrors
+
+before_install: sudo apt-get update -qq
+
+install: pip install -r requirements.txt --use-mirrors --quiet
+
 before_script: rm --recursive --force --verbose *.pyc
+
 script: true    # nosetests --verbose --detailed-errors    # enable when we got Tests
-# after_script: coverage report    # enable when we got Tests
-after_success: covio
-# after_failure: covio  # runs when failed
+
+after_script: true
+
+after_success: true
+
+after_failure: true
+
+notifications:
+  email:
+      recipients:  proyecto-django-colaborativo@googlegroups.com
+      template:
+          - "%{repository}@%{branch}: %{message}(%{build_url})"
+          - "Build: %{build_number}, SHA: %{commit}, Committer: %{author}, Diff: %{compare_url}"
+      on_success: change
+      on_failure: always
+
 cache: apt
