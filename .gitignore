@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Compiled source #
 ###################
 *.com
@@ -7,8 +6,8 @@
 *.exe
 *.o
 *.so
-*.pyc
-*.pyo
+*.swp
+
 
 # Packages #
 ############
@@ -23,11 +22,13 @@
 *.tar
 *.zip
 
+
 # Logs and databases #
 ######################
 *.log
 *.sql
 *.sqlite
+
 
 # OS generated files #
 ######################
@@ -38,11 +39,13 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
-=======
 *.py[cod]
+.directory
+
 
 # C extensions
 *.so
+
 
 # Packages
 *.egg
@@ -60,23 +63,27 @@ lib
 lib64
 __pycache__
 
+
 # Installer logs
 pip-log.txt
+
 
 # Unit test / coverage reports
 .coverage
 .tox
 nosetests.xml
 
+
 # Translations
 *.mo
 
+
 # Database Sqlite3
 #*.db
+
 
 # Mr Developer
 .mr.developer.cfg
 .project
 .pydevproject
->>>>>>> cd9903d14a32c6f68f1de19998f83db58e8381c6
-/database.db
+database.db
