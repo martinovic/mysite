@@ -15,7 +15,6 @@ urlpatterns = patterns('',
     surl('/agenda/', include('agenda.urls', namespace="agenda")),
     surl('/cliente/', include('cliente.urls', namespace="cliente")),
     surl('/developers/', TemplateView.as_view(template_name='developers.html')),
-    surl('/ayuda/', TemplateView.as_view(template_name='ayuda.html')),
     surl('/recover_password/', include('recover_password.urls', namespace="recover_password")),
     surl('admin/', include(admin.site.urls)),
 
