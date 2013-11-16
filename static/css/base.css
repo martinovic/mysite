@@ -2,46 +2,41 @@
 
 /* Código inicial en base.html */
 
-body { font-size: 16px; }
-        label { font-size: 18px; }
-        .input-large {
-            height: 44px !important;
-            font-size: 18px !important;
-        }
+@charset "utf-8";
+@import url(//fonts.googleapis.com/css?family="Ubuntu"); *{font-family:"Ubuntu"}
 
-        .footer{
-            position: absolute;
-            width: 100%;
-            bottom: 0px;
-        }
+
+body{
+    font-size: 16px;
+    background:url(//subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/shattered.png) no-repeat center center fixed;
+    background-color:transparent;-webkit-background-size:cover;
+    -moz-background-size:cover;-o-background-size:cover;background-size:cover
+}
+
+label{ font-size: 18px }
+
+.input-large{
+    height: 44px !important;
+    font-size: 18px !important
+}
+
+.footer{
+    position: absolute;
+    width: 100%;
+    min-height: 75px;
+    bottom: 0;
+    background:
+    linear-gradient(135deg, #f5f5f5 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+    linear-gradient(225deg, #f5f5f5 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+    background-color: #f5f5f5;
+    background-size: 64px 128px;
+    border-top: 2px dotted gray
+}
 
 /* Código inline encontrado en base.html */
-.djcontent{
-	padding-top:75px;
-}
-.datos{
-	
-}
+.djcontent{ padding-top:75px }
 
 .form-vertical{
-
-	/* Old code comented */
-	/*max-width:75%;
-	margin-left:20px;
-	*/
-}
-
-footer{
-
-	/* Old code comented */
-	/*
-	max-height:75px;
-	position:absolute;
-	bottom:0;
-	width:100%;	
-	*/
-
-	height: auto;
-	padding: 20px;
-	background-color: #f5f5f5;
+    /* Old code comented */
+    /*max-width:75%;margin-left:20px*/
 }
