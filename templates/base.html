@@ -7,53 +7,44 @@
     <head>
         <meta charset="utf-8"/><title>.</title>
         <link rel=stylesheet href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
-        <link rel=stylesheet href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap-theme.min.css">
         <link rel=stylesheet href="{% static 'css/base.css' %}" media=screen>
     </head>
     <body>
-
-
-    {# fixed top menu bar #}
-    {% block menu %}{% include "base_menu.html" %}{% endblock %}
-
-
-    {# page content #}
-    <div class="djcontent container">
-        <div class=botonera>
-            {% block botones %}{% endblock %}
-        </div>
-        <div class="row datos center-block">
-            {% block datos %}{% endblock %}
-        </div>
-    </div>
-
-
-    {# footer #}
-    <footer class="footer text-center">
-      <div class="container">
-          <div class=row>
-            <div class="col-md-2"><img src="{% static "img/apache-icon.png" %}" width=75px/>
+        {# fixed top menu bar #}
+        {% block menu %}{% include "base_menu.html" %}{% endblock %}
+        {# page content #}
+        <div class="djcontent container">
+            <div class=botonera>
+                {% block botones %}{% endblock %}
             </div>
-            <div class="col-md-2"><img src="{% static "img/djangologo.png" %}" width=75px/>
-            </div>
-            <div class="col-md-2">
-                <details><summary>Info</summary><small>
-                    <a href="/developers" class=credit>Desarrolladores</a><br>
-                    <a href="//opensource.org/licenses/GPL-3.0" class=credit>Licencia</a><br>
-                    <a href="//github.com/martinovic/mysite" class=credit>Pagina Web</a><br></small>
-                </details>
-            </div>
-            <div class="col-md-2"><img src="{% static "img/Raspi_Colour_R.png" %}" width=40px/>
-            </div>
-            <div class="col-md-2"><img src="{% static "img/HTML5_Logo_256.png" %}" width=50px/>
+            <div class="row datos center-block">
+                {% block datos %}{% endblock %}
             </div>
         </div>
-      </div>
-    </footer>
-
-
-    <script src="//code.jquery.com/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+        {# footer #}
+        <footer class="footer text-center">
+          <div class="container">
+              <div class=row>
+                <div class="col-md-2"><img src="{% static "img/apache-icon.png" %}" width=75px/>
+                </div>
+                <div class="col-md-2"><img src="{% static "img/djangologo.png" %}" width=75px/>
+                </div>
+                <div class="col-md-2">
+                    <details><summary>Info</summary><small>
+                        <a href="/developers" class=credit>Desarrolladores</a><br>
+                        <a href="//opensource.org/licenses/GPL-3.0" class=credit>Licencia</a><br>
+                        <a href="//github.com/martinovic/mysite" class=credit>Pagina Web</a><br></small>
+                    </details>
+                </div>
+                <div class="col-md-2"><img src="{% static "img/Raspi_Colour_R.png" %}" width=40px/>
+                </div>
+                <div class="col-md-2"><img src="{% static "img/HTML5_Logo_256.png" %}" width=50px/>
+                </div>
+            </div>
+          </div>
+        </footer>
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
     </body>
 </html>
 {% endspaceless %}

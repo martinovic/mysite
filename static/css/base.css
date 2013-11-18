@@ -15,6 +15,16 @@ body{
 
 label{ font-size: 18px }
 
+input{
+    border: 1px solid #B6ACAC;
+    box-sizing: border-box;
+    padding: 3px;
+    border-radius: 4px;
+    -o-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
 .input-large{
     height: 44px !important;
     font-size: 18px !important
