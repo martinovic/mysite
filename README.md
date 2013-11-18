@@ -51,4 +51,5 @@ Ayuda:
 
 - http://getbootstrap.com/css
 - http://getbootstrap.com/components
-- https://docs.djangoproject.com/en/1.5
+- https://docs.djangoproject.com/en/1.6
+- http://bootply.com/new#
