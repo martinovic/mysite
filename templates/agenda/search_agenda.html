@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load staticfiles %}
+
+
+{% block titulo %}Agenda - Busqueda{% endblock %}
+
+{% block botones %}
+    <form method=post action="/agenda/search_agenda/">
+        <input type=search results=5 name=s>
+    </form>
+    <form method=post action="/agenda/append_agenda/">
+        <button type=button onclick="window.location=('/agenda/')" class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-arrow-left" title="Pantalla anterior" style="font-size:30px"></span>
+        </button>
+        <button type=submit class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-edit" title="Alta de datos" style="font-size:30px"></span>
+        </button>
+    </form>
+{% endblock %}
+
+{% block datos %}
+    {% if error_message %}
+        <div class="alert alert-danger text-center"><b>{{ error_message }}</b></div>
+    {% else %}
+    <table>
+        <tr>
+            <td>
+                <div class='info'>
+                    <div class="more" align="right">
+                        <img src="{% static "more_property.png" %}" width="15px">
+                    </div>
+                    <table>
+                    <tr><td>
+                    <span style='margin:10px'>{{ posts.razonNombreApellido }}</span><br>
+                    <span style='margin:30px;'>{{ posts.calle }}, {{ posts.numero}} {{ posts.piso}}</span><br>
+                    <span style='margin:30px;'>{{ posts.ciudad }}, {{ posts.provincia}}</span><br>
+                    <span style='margin:30px;'>{{ posts.pais }}</span>
+                    </td><td>
+                    <span style='margin:30px;'>{{ posts.telefono1 }}</span><br>
+                    <span style='margin:30px;'>{{ posts.telefono2 }}</span><br>
+                    <span style='margin:30px;'>{{ posts.telefono3 }}</span><br>
+                    <span style='margin:30px;'>{{ posts.telefono4 }}</span><br>
+                    </td>
+                    </table>
+                </div>
+                <br>
+            </td>
+        <tr>
+    </table>
+    {% endif %}
+{% endblock %}
