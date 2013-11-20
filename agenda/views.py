@@ -21,7 +21,7 @@ def index_agenda(request):
 
     datos = Agenda.objects.order_by('razonNombreApellido').all()
     context = {'posts': datos}
-    return render(request, 'index_agenda.html', context)
+    return render(request, 'agenda/index_agenda.html', context)
 
 
 def append_agenda(request):
@@ -33,7 +33,7 @@ def append_agenda(request):
         if request.POST['id'] != 'none':
             datos = Agenda.objects.get(pk=int(request.POST['id']))
             context = {'posts': datos}
-    return render(request, 'append_agenda.html', context)
+    return render(request, 'agenda/append_agenda.html', context)
 
 
 def save_agenda(request):
@@ -102,9 +102,9 @@ def save_agenda(request):
                 cbu=cbu, horario=horario, observaciones=observaciones)
         try:
             agendaSave.save()
-            return render(request, 'save_agenda.html')
+            return render(request, 'agenda/save_agenda.html')
         except:
-            return render(request, 'failsave_agenda.html')
+            return render(request, 'agenda/failsave_agenda.html')
 
 
 def delete_agenda(request):
@@ -115,10 +115,10 @@ def delete_agenda(request):
         try:
             Agenda.objects.get(pk=request.POST['id']).delete()
             context = {'message': 'Se ha borrado el registro.'}
-            return render(request, 'delete_agenda.html', context)
+            return render(request, 'agenda/delete_agenda.html', context)
         except:
             context = {'error_message': 'No se pudo borrar el archivo'}
-            return render(request, 'delete_agenda.html', context)
+            return render(request, 'agenda/delete_agenda.html', context)
 
 
 def search_agenda(request):
@@ -133,4 +133,4 @@ def search_agenda(request):
     except:
         context = {'error_message': 'Dato no encontrado'}
 
-    return render(request, 'search_agenda.html', context)
+    return render(request, 'agenda/search_agenda.html', context)

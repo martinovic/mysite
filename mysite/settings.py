@@ -149,6 +149,10 @@ INSTALLED_APPS = (
     'principal',
     'recover_password',
     'cliente',
+    'productos',
+    'compras',
+    'ventas',
+    #'stock',
 )
 
 # A sample logging configuration. The only tangible logging
