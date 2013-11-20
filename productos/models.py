@@ -30,7 +30,7 @@ class Products(models.Model):
 class Categories(models.Model):
     '''Modelo de categorias de productos'''
     name = models.CharField(max_length=200, blank=False)
-    parent_id = models.ForeignKey(Productos)
+    parent_id = models.ForeignKey(Products)
     typeCategorie = models.CharField(max_length=200, blank=False)
 
     def __unicode__(self):
