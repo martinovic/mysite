@@ -13,7 +13,7 @@ from django.db import models
 # Create your models here.
 
 
-class Productos(models.Model):
+class Products(models.Model):
     '''Modelo de productos'''
     name = models.CharField(max_length=200, blank=False)
     description = models.CharField(max_length=1000, blank=False)
