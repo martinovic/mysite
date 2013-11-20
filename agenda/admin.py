@@ -9,6 +9,6 @@ __date__ = "2013-10-20"
 __updated__ = "2013-10-24"
 
 from django.contrib import admin
-from agenda.models import Agenda
+from agenda.models import Diary
 
-admin.site.register(Agenda)
+admin.site.register(Diary)
