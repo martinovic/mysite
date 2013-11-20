@@ -11,7 +11,7 @@ __updated__ = "2013-11-20"
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
-from agenda.models import Agenda
+from agenda.models import Diary
 
 
 def index_agenda(request):
@@ -19,7 +19,7 @@ def index_agenda(request):
     if not request.user.is_authenticated():
         return HttpResponseRedirect("/")
 
-    datos = Agenda.objects.order_by('razonNombreApellido').all()
+    datos = Diary.objects.order_by('razonNombreApellido').all()
     context = {'posts': datos}
     return render(request, 'agenda/index_agenda.html', context)
 
@@ -31,7 +31,7 @@ def append_agenda(request):
     context = {}
     if request.method == 'POST':
         if request.POST['id'] != 'none':
-            datos = Agenda.objects.get(pk=int(request.POST['id']))
+            datos = Diary.objects.get(pk=int(request.POST['id']))
             context = {'posts': datos}
     return render(request, 'agenda/append_agenda.html', context)
 
@@ -65,7 +65,7 @@ def save_agenda(request):
         observaciones = request.POST['observaciones']
         transportes = request.POST['transportes']
         if request.POST['id'] != "":
-            agendaSave = Agenda.objects.get(pk=request.POST['id'])
+            agendaSave = Diary.objects.get(pk=request.POST['id'])
             agendaSave.razonNombreApellido = razonNombreApellido
             agendaSave.calle = calle
             agendaSave.numero = numero
@@ -90,7 +90,7 @@ def save_agenda(request):
             agendaSave.observaciones = observaciones
             agendaSave.transportes = transportes
         else:
-            agendaSave = Agenda(razonNombreApellido=razonNombreApellido,
+            agendaSave = Diary(razonNombreApellido=razonNombreApellido,
                 calle=calle, numero=numero,
                 piso=piso, ciudad=ciudad,
                 provincia=provincia, pais=pais,
@@ -113,7 +113,7 @@ def delete_agenda(request):
     c.update(csrf(request))
     if request.method == 'POST':
         try:
-            Agenda.objects.get(pk=request.POST['id']).delete()
+            Diary.objects.get(pk=request.POST['id']).delete()
             context = {'message': 'Se ha borrado el registro.'}
             return render(request, 'agenda/delete_agenda.html', context)
         except:
@@ -127,7 +127,7 @@ def search_agenda(request):
     c.update(csrf(request))
     print(request.POST["s"])
     try:
-        datos = get_object_or_404(Agenda,
+        datos = get_object_or_404(Diary,
             razonNombreApellido__contains=request.POST["s"])
         context = {'posts': datos}
     except:

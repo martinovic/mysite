@@ -13,7 +13,7 @@ from django.db import models
 # Create your models here.
 
 
-class Agenda(models.Model):
+class Diary(models.Model):
     '''clase modelo de la agenda'''
     PROVEEDOR = 'PR'
     CLIENTE = 'CL'
