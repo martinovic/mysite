@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load staticfiles %}
+
+{% block titulo%}Cliente{% endblock %}
+
+{% block botones %}
+    <form method="post" action="/cliente/search_cliente"
+        style="float:left; width:80%; margin:10px">
+        <input type="search" results=5 name="s"
+            style='height:30px; width:200px'
+            title="Busqueda de Clientes">
+    </form>
+    <form method=post action="" margin=0>
+        <button type=submit class="btn btn-lg btn-success">
+            <input type=hidden name=id value=none>
+              <span class="glyphicon glyphicon-edit" title="Alta de datos" style="font-size:30px"></span>
+        </button>
+    </form>
+{% endblock %}
+
+{% block datos %}
+<table>
+{% for post in posts %}
+    <tr>
+      <td>
+        <div class='info'>
+          <form method="post" action="" margin=0 style="float:left;">
+              <input type="hidden" name="id" value="{{ post.pk  }}"/>
+              <button type="submit">
+                  <span class="glyphicon glyphicon-minus-sign"
+                    title="Modificacion de datos">
+              </button>
+          </form>
+          <form method="post" action="" margin=0 style="float:left;">
+              <input type="hidden" name="id" value="{{ post.pk  }}"/>
+              <button type="submit">
+                  <span class="glyphicon glyphicon-pencil"
+                    title="Modificacion de datos">
+              </button>
+          </form>
+          <table>
+              <tr>
+                  <td>
+                      <span style='margin:10px'>{{ post.nombre }}</span></br>
+                      <span style='margin:10px'>{{ post.apellido }}</span></br>
+                      <span style='margin:10px'>{{ post.pais }}</span></br>
+                      <span style='margin:10px'>{{ post.provincia }}</span></br>
+
+                  </td>
+              </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+{% endfor %}
+</table>
+{% endblock %}

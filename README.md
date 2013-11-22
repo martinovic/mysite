@@ -30,6 +30,17 @@ Guia de Estilo de Codigo:
 - UTF-8 Encoding Declaration en los .py        # -*- coding: utf-8 -*-
 - __ init __.py Vacios siempre que sea posible, previene import circular
 
+Imports:
+--------
+
+Put ALL of them at the top of the file grouped together by the type of import:
+
+- Future, eg:  from __future__ import braces
+- Python Standard Library, eg: import os
+- Third Party, eg: from twisted import log
+- Current Python Project, eg:  from clientes import Cliente 
+- Explicitly Local, eg: from . import blah
+- Custom, eg: imports inside try: ... except: blocks
 
 Debug:
 ------
