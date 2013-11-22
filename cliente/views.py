@@ -20,4 +20,4 @@ def index_cliente(request):
 
     datos = Cliente.objects.order_by('nombre').all()
     context = {'posts': datos}
-    return render(request, 'index_cliente.html', context)
+    return render(request, 'cliente/index_cliente.html', context)
