@@ -12,5 +12,33 @@ from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
 from django.shortcuts import render
+from productos.models import Products
 
-# Create your views here.
+
+def index_product(request):
+    '''Pagina indice'''
+    if not request.user.is_authenticated():
+        return HttpResponseRedirect("/")
+    datos = Products.objects.order_by('name').all()
+    context = {'posts': datos}
+    return render(request, 'productos/index_productos.html', context)
+
+
+def append_product(request):
+    '''Agrega un producto'''
+    pass
+
+
+def save_product(request):
+    '''Graba un producto'''
+    pass
+
+
+def delete_product(request):
+    '''Borra un producto'''
+    pass
+
+
+def search_product(request):
+    '''Busqueda de un producto'''
+    pass

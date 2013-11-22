@@ -20,7 +20,7 @@ from django.contrib.auth import logout
 
 def loginShow(request):
     '''Prueba de index'''
-    return render(request, 'login.html')
+    return render(request, 'login.html', {'menu': 'no'})
 
 
 def validate(request):

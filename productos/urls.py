@@ -9,9 +9,10 @@ __date__ = "2013-10-20"
 __updated__ = "2013-10-31"
 
 from django.conf.urls import patterns
-
+from productos import views
 # amitu.com/smarturls
 from smarturls import surl
 
 urlpatterns = patterns('',
+    surl('^$', views.index_product, name='index_productos'),
 )
