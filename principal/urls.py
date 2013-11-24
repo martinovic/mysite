@@ -10,12 +10,7 @@ __updated__ = "2013-10-31"
 
 
 from django.conf.urls import patterns
-
-
-# amitu.com/smarturls
 from smarturls import surl
 
 
-urlpatterns = patterns('',
-    surl('^$', 'principal.views.loginShow'),
-)
+urlpatterns = patterns('', surl('^$', 'principal.views.loginShow'), )

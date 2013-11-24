@@ -8,12 +8,11 @@ __url__ = ''
 __date__ = "2013-10-20"
 __updated__ = "2013-10-31"
 
-from django.conf.urls import patterns
-from agenda import views
 
-# amitu.com/smarturls
+from django.conf.urls import patterns
 from smarturls import surl
 
-urlpatterns = patterns('',
-    surl('^$', views.index_agenda, name='index_agenda'),
-)
+from agenda import views
+
+
+urlpatterns = patterns('', surl('^$', views.index_agenda, name='index_agenda'))

@@ -1,22 +1,21 @@
-from django.conf.urls import patterns, include  # , url
+from django.conf.urls import include, patterns
+from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.views.generic import TemplateView
 from django.utils.functional import curry
-from django.views.defaults import server_error, page_not_found
-from django.views.defaults import permission_denied
+from django.views.defaults import (page_not_found, permission_denied,
+                                   server_error)
+from django.views.generic import TemplateView
+from smarturls import surl
 
 # Uncomment the next two lines to enable the admin:
-from django.contrib import admin
 admin.autodiscover()
-
-# amitu.com/smarturls
-from smarturls import surl
 
 
 # custom error pages
 handler500 = curry(server_error, template_name='500.html')
 handler404 = curry(page_not_found, template_name='404.html')
 handler403 = curry(permission_denied, template_name='403.html')
+
 
 urlpatterns = patterns('',
     surl('/', include('principal.urls', namespace="principal")),
@@ -37,5 +36,6 @@ urlpatterns = patterns('',
 
     surl('/cliente/append_cliente/', 'cliente.views.append_cliente'),
 )
+
 
 urlpatterns += staticfiles_urlpatterns()

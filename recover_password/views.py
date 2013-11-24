@@ -9,13 +9,8 @@ __url__ = ''
 __date__ = "2013-10-20"
 __updated__ = "2013-10-28"
 
-# Create your views here.
 
-from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponse, HttpResponseRedirect
-from django.core.urlresolvers import reverse
-from django.template import loader, Context
-from django.core.context_processors import csrf
+from django.shortcuts import render
 
 
 def recover_password(request):
