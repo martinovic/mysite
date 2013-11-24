@@ -34,6 +34,8 @@ urlpatterns = patterns('',
     surl('/agenda/save_agenda/', 'agenda.views.save_agenda'),
     surl('/agenda/search_agenda/', 'agenda.views.search_agenda'),
     surl('/agenda/delete_agenda/', 'agenda.views.delete_agenda'),
+
+    surl('/cliente/append_cliente/', 'cliente.views.append_cliente'),
 )
 
 urlpatterns += staticfiles_urlpatterns()
