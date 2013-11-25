@@ -1,20 +1,11 @@
 from django.conf.urls import include, patterns
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.utils.functional import curry
-from django.views.defaults import (page_not_found, permission_denied,
-                                   server_error)
 from django.views.generic import TemplateView
 from smarturls import surl
 
 # Uncomment the next two lines to enable the admin:
 admin.autodiscover()
-
-
-# custom error pages
-handler500 = curry(server_error, template_name='500.html')
-handler404 = curry(page_not_found, template_name='404.html')
-handler403 = curry(permission_denied, template_name='403.html')
 
 
 urlpatterns = patterns('',
