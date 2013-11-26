@@ -8,9 +8,8 @@ __url__ = ''
 __date__ = "2013-11-20"
 __updated__ = "2013-11-20"
 
-from django.db import models
 
-# Create your models here.
+from django.db import models
 
 
 class Products(models.Model):

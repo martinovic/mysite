@@ -8,9 +8,10 @@ __url__ = ''
 __date__ = "2013-10-20"
 __updated__ = "2013-10-29"
 
+
 from django.db import models
 
-# Create your models here.
+from agenda.models import Diary
 
 
 class Rubros(models.Model):
@@ -44,7 +45,7 @@ class Historial(models.Model):
     fecha = models.DateField()
     codigo = models.ForeignKey(Stock)
     cantidad = models.IntegerField(default=0)
-    proveedor = models.ForeignKey(Agenda)
+    proveedor = models.ForeignKey(Diary)
     precioCompra = models.FloatField(default=0)
     factura = models.CharField(max_length=50, blank=False)
 

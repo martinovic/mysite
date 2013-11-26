@@ -8,9 +8,11 @@ __url__ = ''
 __date__ = "2013-10-20"
 __updated__ = "2013-11-20"
 
-from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponseRedirect
+
 from django.core.context_processors import csrf
+from django.http import HttpResponseRedirect
+from django.shortcuts import get_object_or_404, render
+
 from agenda.models import Diary
 
 
@@ -125,7 +127,6 @@ def search_agenda(request):
     '''Busqueda de datos'''
     c = {}
     c.update(csrf(request))
-    print(request.POST["s"])
     try:
         datos = get_object_or_404(Diary,
             razonNombreApellido__contains=request.POST["s"])

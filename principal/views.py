@@ -8,14 +8,11 @@ __url__ = ''
 __date__ = "2013-10-20"
 __updated__ = "2013-11-20"
 
-# Create your views here.
 
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.contrib.auth import authenticate, login, logout
 from django.core.context_processors import csrf
-from django.contrib.auth import authenticate
-from django.contrib.auth import login
-from django.contrib.auth import logout
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
 
 
 def loginShow(request):

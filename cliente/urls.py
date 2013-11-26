@@ -8,10 +8,12 @@ __url__ = ''
 __date__ = "2013-11-08"
 __updated__ = "2013-11-08"
 
+
 from django.conf.urls import patterns
+from smarturls import surl
+
 from cliente import views
 
-from smarturls import surl
 
 urlpatterns = patterns('',
     surl('^$', views.index_cliente, name='index_cliente'),
