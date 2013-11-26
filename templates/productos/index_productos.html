@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load staticfiles %}
+
+
+{% block titulo %}Productos{% endblock %}
+
+{% block botones %}
+        <form method=post action="/agenda/search_agenda/"
+            style="float:left; width:80%; margin:10px">
+            <input type=search results=5 name=s
+                style='height:30px; width:200px'
+                title="Busqueda de datos">
+        </form>
+        <form method=post action="/productos/append_productos/" margin=0>
+            <button type=submit class="btn btn-lg btn-success">
+                <input type=hidden name=id value=none>
+                <span class="glyphicon glyphicon-edit"
+                    title="Alta de datos" style="font-size:30px"></span>
+            </button>
+        </form>
+{% endblock %}
+
+{% block datos %}
+{% endblock %}

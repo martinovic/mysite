@@ -152,7 +152,8 @@ INSTALLED_APPS = (
     'productos',
     'compras',
     'ventas',
-    #'stock',
+    'staff',
+    'stores',
 )
 
 # A sample logging configuration. The only tangible logging
