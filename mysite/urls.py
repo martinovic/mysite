@@ -27,6 +27,7 @@ urlpatterns = patterns('',
     surl('/agenda/delete_agenda/', 'agenda.views.delete_agenda'),
 
     surl('/cliente/append_cliente/', 'cliente.views.append_cliente'),
+    surl('/cliente/save_cliente/', 'cliente.views.save'),
 )
 
 

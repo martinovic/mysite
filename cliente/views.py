@@ -35,3 +35,31 @@ def append_cliente(request):
             datos = Cliente.objects.get(pk=int(request.POST['id']))
             context = {'posts': datos}
     return render(request, 'cliente/append_cliente.html', context)
+
+def save(request):
+    '''Graba los datos'''
+    c = {}
+    c.update(csrf(request))
+    if request.method == 'POST':
+        nombre = request.POST['nombre']
+        apellido = request.POST['apellido']
+        provincia = request.POST['provincia']
+        pais = request.POST['pais']
+        fechaNacimiento = request.POST['fechaNacimiento']
+        if request.POST['id'] != "":
+            clienteSave = Cliente.objects.get(pk=request.POST['id'])
+            clienteSave.nombre = nombre
+            clienteSave.apellido = apellido
+            clienteSave.provincia = provincia
+            clienteSave.pais = pais
+            clienteSave.fechaNacimiento = fechaNacimiento
+        else:
+            clienteSave = Cliente(nombre=nombre, apellido=apellido,
+                                  provincia=provincia, pais=pais,
+                                  fechaNacimiento=fechaNacimiento)
+        try:
+            clienteSave.save()
+            return render(request, 'cliente/save_cliente.html')
+        except:
+            print 'error_message'
+
