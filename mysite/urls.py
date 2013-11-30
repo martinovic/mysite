@@ -28,6 +28,7 @@ urlpatterns = patterns('',
 
     surl('/cliente/append_cliente/', 'cliente.views.append_cliente'),
     surl('/cliente/save_cliente/', 'cliente.views.save'),
+    surl('/cliente/search_cliente/', 'cliente.views.search'),
 )
 
 

@@ -5,7 +5,7 @@
 {% block titulo%}Cliente{% endblock %}
 
 {% block botones %}
-    <form method="post" action="/cliente/search_cliente"
+    <form method="post" action="/cliente/search_cliente/"
         style="float:left; width:80%; margin:10px">
         <input type="search" results=5 name="s"
             style='height:30px; width:200px'
@@ -25,11 +25,11 @@
     <tr>
       <td>
         <div class='info'>
-          <form method="post" action="" margin=0 style="float:left;">
+          <form method="post" action="/cliente/delete_cliente/" margin=0 style="float:left;">
               <input type="hidden" name="id" value="{{ post.pk  }}"/>
               <button type="submit">
                   <span class="glyphicon glyphicon-minus-sign"
-                    title="Modificacion de datos">
+                    title="Borrado de datos">
               </button>
           </form>
           <form method="post" action="" margin=0 style="float:left;">

@@ -10,7 +10,7 @@ __updated__ = "2013-11-08"
 
 from django.core.context_processors import csrf
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from cliente.models import Cliente
 
@@ -63,3 +63,15 @@ def save(request):
         except:
             print 'error_message'
 
+def search(request):
+    '''Busquesa de datos'''
+    c = {}
+    c.update(csrf(request))
+    try:
+        datos = get_object_or_404(Cliente,
+            nombre__contains=request.POST["s"])
+        context = {'posts': datos}
+    except:
+        context = {'error_message': 'Dato no encontrado'}
+
+    return render(request, 'cliente/search_cliente.html', context)
