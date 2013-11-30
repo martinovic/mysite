@@ -63,6 +63,19 @@ def save(request):
         except:
             print 'error_message'
 
+def delete(request):
+    '''borrado de datos'''
+    c = {}
+    c.update(csrf(request))
+    if request.method == 'POST':
+        try:
+            Cliente.objects.get(pk=request.POST['id']).delete()
+            context = {'message': 'Se ha borrado el registro'}
+        except:
+            context = {'error_message': 'No se pudo borrar el registro'}
+
+        return render(request, 'cliente/delete_cliente.html', context)
+
 def search(request):
     '''Busquesa de datos'''
     c = {}
