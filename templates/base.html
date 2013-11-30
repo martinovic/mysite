@@ -81,8 +81,16 @@
         </footer>
         <script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"auto"});}</script>
         <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-        <script src="//code.jquery.com/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        {# Off-Line Fallback for JS and CSS #}
+        <script> 
+            window.jQuery || document.write(
+                "<script src='js/jquery.min.js'><\/script>" + 
+                "<script src='js/bootstrap.min.js'><\/script>" + 
+                "<link rel=stylesheet href='css/bootstrap.min.css'>"
+            )
+        </script>
     </body>
 </html>
 {% endspaceless %}
