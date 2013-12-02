@@ -73,22 +73,43 @@
                         <a href="//github.com/martinovic/mysite" class=credit>Pagina Web</a><br></small>
                     </details>
                 </div>
-                <div class="col-md-2"><img src="{% static "img/Raspi_Colour_R.png" %}" width=40px/>
+                <div class="col-md-2"><button class="btn btn-sml" data-toggle=modal data-target="#myModal">Calculador</button>
                 </div>
                 <div class="col-md-2"><button class="btn btn-sml" onclick="document.documentElement.webkitRequestFullScreen()">Fullscreen</button>
                 </div>
             </div>
           </div>
         </footer>
+
+
+    {# modal #}
+    <div class="modal fade" id=myModal tabindex="-1" role=dialog aria-labelledby=myModalLabel aria-hidden=true>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class=close data-dismiss=modal aria-hidden=true>&times;</button>
+            <h4 class="modal-title" id=myModalLabel>Calculator</h4>
+          </div>
+          <div class="modal-body">
+            {% include "calculator/calculator.html" %}
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-danger" data-dismiss=modal>Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
         <script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"auto"});}</script>
         <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
         {# Off-Line Fallback for JS and CSS #}
-        <script> 
+        <script>
             window.jQuery || document.write(
-                "<script src='static/js/jquery.min.js'><\/script>" + 
-                "<script src='static/js/bootstrap.min.js'><\/script>" + 
+                "<script src='static/js/jquery.min.js'><\/script>" +
+                "<script src='static/js/bootstrap.min.js'><\/script>" +
                 "<link rel=stylesheet href='static/css/bootstrap.min.css'>"
             )
         </script>
