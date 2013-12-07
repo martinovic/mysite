@@ -30,6 +30,8 @@ urlpatterns = patterns('',
     surl('/cliente/save_cliente/', 'cliente.views.save'),
     surl('/cliente/search_cliente/', 'cliente.views.search'),
     surl('/cliente/delete_cliente/', 'cliente.views.delete'),
+
+    surl('/productos/append_productos/', 'productos.views.append_product'),
 )
 
 

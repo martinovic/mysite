@@ -26,7 +26,14 @@ def index_product(request):
 
 def append_product(request):
     '''Agrega un producto'''
-    pass
+    #c = {}
+    #c.update(csrf(request))
+    context = {}
+    if request.method == 'POST':
+        if request.POST['id'] != 'none':
+            datos = Products.objects.get(pk=int(request.POST['id']))
+            context = {'posts': datos}
+    return render(request, 'productos/append_producto.html', context)
 
 
 def save_product(request):
