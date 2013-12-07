@@ -26,8 +26,8 @@ def index_product(request):
 
 def append_product(request):
     '''Agrega un producto'''
-    #c = {}
-    #c.update(csrf(request))
+    c = {}
+    c.update(csrf(request))
     context = {}
     if request.method == 'POST':
         if request.POST['id'] != 'none':
